@@ -8,8 +8,8 @@ import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrdersComponent} from './orders/orders.component';
 import {ShowsComponent} from './shows/shows.component';
-import { HeaderComponent } from './header.component';
-import { ActionBarComponent } from './action-bar.component';
+import {SideBarComponent} from './side-bar.component';
+import {ActionBarComponent} from './action-bar.component';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { ActionBarComponent } from './action-bar.component';
     DashboardComponent,
     OrdersComponent,
     ShowsComponent,
-    HeaderComponent,
+    SideBarComponent,
     ActionBarComponent
   ],
   imports: [
