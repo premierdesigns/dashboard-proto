@@ -2,8 +2,31 @@
   <div class="col-xs-12">
     <div class="card">
       <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <table id="example" class="table" cellspacing="0">
+        <div class="navbar">
+          <h4 class="card-title navbar-brand">Card title</h4>
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/orders">
+                <i class="fa fa-edit"></i>
+              </a>
+            </li>
+          </ul>
+          <form class="form-inline float-xs-right">
+
+            <input type="text" class="form-control form-control-sm" placeholder="Type anything...">
+
+            <div class="form-group">
+              <div class="input-group input-group-sm">
+                <input class="form-control  form-control-sm" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-addon" (click)="d.toggle()" >
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <table id="example" class="table table-hover" cellspacing="0">
           <thead>
           <tr>
             <th>Name</th>
