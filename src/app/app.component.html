@@ -1,15 +1,11 @@
 <div class="container-fluid h-100">
-  <div class="row">
-    <div class="col-md-2">
-      <div class="navbar navbar-light">
-        <span class="navbar-text">Navbar</span>
-      </div>
-      <hr class="mt-0">
+  <div class="row h-100">
+    <div class="col-md-2 h-100 side-bar-wrapper">
       <pd-side-bar></pd-side-bar>
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-10 h-100 main-panel">
       <pd-action-bar></pd-action-bar>
-      <div class="px-1 py-1 bg-faded">
+      <div class="px-1 py-1 bg-faded h-100">
         <router-outlet></router-outlet>
       </div>
     </div>

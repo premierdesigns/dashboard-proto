@@ -1,19 +1,42 @@
-<div class="row">
-  <div class="col-xs-10 text-xs-center offset-xs-1">
-    <p>Profile</p>
+<div class="side-bar">
+  <div class="navbar navbar-light">
+    <span class="navbar-text">Navbar</span>
   </div>
+
+  <hr class="mt-0">
+
+  <div class="user">
+    <div class="row photo">
+      <div class="col-xs-4 text-xs-center offset-xs-4">
+        <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="" class="img-fluid rounded-circle">
+      </div>
+    </div>
+    <div class="row info">
+      <div class="col-xs-12 text-xs-center">
+        <a (click)="isCollapsed = !isCollapsed">User Name</a>
+        <div [ngbCollapse]="isCollapsed">
+          <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <ul class="nav nav-pills nav-stacked">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']">Orders</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/shows']">Shows</a>
+    </li>
+  </ul>
+
 </div>
-
-<hr>
-
-<ul class="nav nav-pills nav-stacked">
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']">Orders</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="['/shows']">Shows</a>
-  </li>
-</ul>
