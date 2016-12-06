@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn-simple, .alert, a, .td-name, td, button.close {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  //font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+  font-weight: 400;
+}
+
 html {
   height: 100%;
 }
@@ -8,17 +15,99 @@ body {
 }
 
 .side-bar-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   //width: 260px;
   display: block;
   z-index: 1;
-  //color: #fff;
+  color: #fff;
   font-weight: 200;
-  background-color: white;
 }
+
+.side-bar {
+  z-index: 4;
+  position: relative;
+}
+
+.side-bar-wrapper[data-color="orange"]:after, .bootstrap-navbar[data-color="orange"]:after {
+  background: #FFA534;
+  background: -moz-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFA534), color-stop(100%, rgba(236, 22, 87, 0.7)));
+  background: -webkit-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+  background: -o-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+  background: -ms-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+  background: linear-gradient(to bottom, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+  background-size: 150% 150%;
+}
+
+.side-bar-wrapper:before {
+  opacity: .33;
+  background: #000000;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.side-bar-wrapper:after, .bootstrap-navbar:after {
+  background: #787878;
+  background: -moz-linear-gradient(top, #787878 0%, rgba(52, 52, 52, 0.7) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #787878), color-stop(100%, rgba(52, 52, 52, 0.7)));
+  background: -webkit-linear-gradient(top, #787878 0%, rgba(52, 52, 52, 0.7) 100%);
+  background: -o-linear-gradient(top, #787878 0%, rgba(52, 52, 52, 0.7) 100%);
+  background: -ms-linear-gradient(top, #787878 0%, rgba(52, 52, 52, 0.7) 100%);
+  background: linear-gradient(to bottom, #787878 0%, rgba(52, 52, 52, 0.7) 100%);
+  background-size: 150% 150%;
+  z-index: 3;
+  opacity: 1;
+}
+
+.side-bar-wrapper:after, .side-bar-wrapper:before, .bootstrap-navbar:after, .bootstrap-navbar:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.sidebar-background {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("https://source.unsplash.com/category/nature/1600x900");
+  opacity: 0.15;
+}
+
+.side-bar .nav .nav-item .nav-link {
+   color: #ffffff;
+   opacity: .86;
+ }
+.side-bar .nav .nav-item a.active {
+  color: #ffffff;
+  opacity: 1;
+  background: rgba(255,255,255,0.23);
+}
+
+//.side-bar .nav .nav-item .nav-link i {
+//  float: left;
+//  margin-right: 15px;
+//  width: 30px;
+//  text-align: center;
+//}
 
 .main-panel {
   background: #F5F5F5;
