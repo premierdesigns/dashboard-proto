@@ -17,7 +17,7 @@
         <div [ngbCollapse]="isCollapsed">
           <ul class="nav">
             <li class="nav-item">
-              <a href="#" class="nav-link">Profile</a>
+              <a [routerLink]="['/profile']" class="nav-link">Profile</a>
             </li>
             <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
@@ -32,14 +32,23 @@
   <ul class="nav nav-pills nav-stacked">
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">
-        <i class="fa fa-fw fa-dashboard"></i>Dashboard
+        <i class="fa fa-fw fa-line-chart"></i>Dashboard
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/shows']"><i class="fa fa-fw fa-shopping-bag"></i>Shows</a>
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/shows']"><i class="fa fa-fw fa-gift"></i>Shows</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i class="fa fa-fw fa-picture-o"></i>Resources</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/training']"><i class="fa fa-fw fa-university"></i>Training</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/familytree']"><i class="fa fa-fw fa-pagelines"></i>Family Tree</a>
     </li>
   </ul>
 

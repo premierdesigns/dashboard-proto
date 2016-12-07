@@ -14,6 +14,11 @@ import {SideBarComponent} from './side-bar.component';
 import {ActionBarComponent} from './action-bar.component';
 import { ActionBarSearchComponent } from './action-bar-search/action-bar-search.component';
 import { SalesCardComponent } from './dashboard/sales-card/sales-card.component';
+import { FamilyTreeComponent } from './family-tree/family-tree.component';
+import { JewelerProfileComponent } from './jeweler-profile/jeweler-profile.component';
+import { CreativeResourcesComponent } from './creative-resources/creative-resources.component';
+import { JewelerShowsComponent } from './jeweler-shows/jeweler-shows.component';
+import { TrainingPageComponent } from './training-page/training-page.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { SalesCardComponent } from './dashboard/sales-card/sales-card.component'
     SideBarComponent,
     ActionBarComponent,
     ActionBarSearchComponent,
-    SalesCardComponent
+    SalesCardComponent,
+    FamilyTreeComponent,
+    JewelerProfileComponent,
+    CreativeResourcesComponent,
+    JewelerShowsComponent,
+    TrainingPageComponent
   ],
   imports: [
     BrowserModule,
