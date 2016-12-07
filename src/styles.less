@@ -1,8 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@pdi-purple: #975fa7;
+@pdi-orange: #f0473d;
+@pdi-pink: #e8417b;
+@pdi-green: #72c596;
+@pdi-blue: #59c5c7;
+@pdi-grey: #8a8c8d;
+
+@pdi-purple-compDark: #502A5A;
+@pdi-orange-compDark: #A32119;
+@pdi-pink-compDark: #9B1C48;
+@pdi-green-compDark: #3A7855;
+@pdi-blue-compDark: #2B797A;
+@pdi-grey-compDark: #393E40;
+
+@pdi-purple-compLight: #A97AB6;
+@pdi-orange-compLight: #FF645A;
+@pdi-pink-compLight: #F75E93;
+@pdi-green-compLight: #90D4AD;
+@pdi-blue-compLight: #75D4D6;
+@pdi-grey-compLight: #9C9C9C;
+
+@pdi-purple-rgb: rgb(151, 95, 167);
+@pdi-orange-rgb: rgb(240, 71, 61);
+@pdi-pink-rgb: rgb(232, 65, 123);
+@pdi-green-rgb: rgb(114, 197, 150);
+@pdi-blue-rgb: rgb(89, 197, 199);
+@pdi-grey-rgb: rgb(138, 140, 141);
+
 body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn-simple, .alert, a, .td-name, td, button.close {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  //font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+  font-family: "Lato","Helvetica Neue",Arial,sans-serif;
   font-weight: 400;
 }
 
@@ -31,14 +59,36 @@ body {
   position: relative;
 }
 
-.side-bar-wrapper[data-color="orange"]:after, .bootstrap-navbar[data-color="orange"]:after {
-  background: #FFA534;
-  background: -moz-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFA534), color-stop(100%, rgba(236, 22, 87, 0.7)));
-  background: -webkit-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
-  background: -o-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
-  background: -ms-linear-gradient(top, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
-  background: linear-gradient(to bottom, #FFA534 0%, rgba(236, 22, 87, 0.7) 100%);
+.side-bar-wrapper[data-color="orange"]:after {
+  background: @pdi-orange;
+  background: -moz-linear-gradient(top, @pdi-orange-compLight 0%, @pdi-orange-compDark 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @pdi-orange-compLight), color-stop(100%, @pdi-orange-compDark));
+  background: -webkit-linear-gradient(top, @pdi-orange-compLight 0%, @pdi-orange-compDark 100%);
+  background: -o-linear-gradient(top, @pdi-orange-compLight 0%, @pdi-orange-compDark 100%);
+  background: -ms-linear-gradient(top, @pdi-orange-compLight 0%, @pdi-orange-compDark 100%);
+  background: linear-gradient(to bottom, @pdi-orange-compLight 0%, @pdi-orange-compDark 100%);
+  background-size: 150% 150%;
+}
+
+.side-bar-wrapper[data-color="purple"]:after {
+   background: @pdi-purple;
+   background: -moz-linear-gradient(top, @pdi-purple-compLight 0%, @pdi-purple-compDark 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @pdi-purple-compLight), color-stop(100%, @pdi-purple-compDark));
+   background: -webkit-linear-gradient(top, @pdi-purple-compLight 0%, @pdi-purple-compDark 100%);
+   background: -o-linear-gradient(top, @pdi-purple-compLight 0%, @pdi-purple-compDark 100%);
+   background: -ms-linear-gradient(top, @pdi-purple-compLight 0%, @pdi-purple-compDark 100%);
+   background: linear-gradient(to bottom, @pdi-purple-compLight 0%, @pdi-purple-compDark 100%);
+   background-size: 150% 150%;
+ }
+
+.side-bar-wrapper[data-color="green"]:after {
+  background: @pdi-green;
+  background: -moz-linear-gradient(top, @pdi-green-compLight 0%, @pdi-green-compDark 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @pdi-green-compLight), color-stop(100%, @pdi-green-compDark));
+  background: -webkit-linear-gradient(top, @pdi-green-compLight 0%, @pdi-green-compDark 100%);
+  background: -o-linear-gradient(top, @pdi-green-compLight 0%, @pdi-green-compDark 100%);
+  background: -ms-linear-gradient(top, @pdi-green-compLight 0%, @pdi-green-compDark 100%);
+  background: linear-gradient(to bottom, @pdi-green-compLight 0%, @pdi-green-compDark 100%);
   background-size: 150% 150%;
 }
 
@@ -102,12 +152,11 @@ body {
   background: rgba(255,255,255,0.23);
 }
 
-//.side-bar .nav .nav-item .nav-link i {
-//  float: left;
-//  margin-right: 15px;
-//  width: 30px;
-//  text-align: center;
-//}
+.side-bar .nav .nav-item .nav-link i {
+  margin-right: 15px;
+  width: 30px;
+  text-align: center;
+}
 
 .main-panel {
   background: #F5F5F5;

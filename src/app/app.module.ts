@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -12,6 +13,7 @@ import {ShowsComponent} from './shows/shows.component';
 import {SideBarComponent} from './side-bar.component';
 import {ActionBarComponent} from './action-bar.component';
 import { ActionBarSearchComponent } from './action-bar-search/action-bar-search.component';
+import { SalesCardComponent } from './dashboard/sales-card/sales-card.component';
 
 
 @NgModule({
@@ -22,14 +24,16 @@ import { ActionBarSearchComponent } from './action-bar-search/action-bar-search.
     ShowsComponent,
     SideBarComponent,
     ActionBarComponent,
-    ActionBarSearchComponent
+    ActionBarSearchComponent,
+    SalesCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
