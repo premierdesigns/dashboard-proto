@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 // let template = require('./sales-card.component.html');
 
 @Component({

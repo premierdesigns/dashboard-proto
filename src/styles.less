@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
 @pdi-purple: #975fa7;
 @pdi-orange: #f0473d;
 @pdi-pink: #e8417b;
@@ -31,7 +33,7 @@ body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: "Lato","Helvetica Neue",Arial,sans-serif;
-  font-weight: 400;
+  //font-weight: 400;
 }
 
 html {
@@ -51,7 +53,6 @@ body {
   display: block;
   z-index: 1;
   color: #fff;
-  font-weight: 200;
 }
 
 .side-bar {
@@ -125,12 +126,12 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .sidebar-background {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
   width: 100%;
   display: block;
@@ -139,7 +140,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-image: url("https://source.unsplash.com/category/nature/1600x900");
-  opacity: 0.15;
+  opacity: 0.075;
 }
 
 .side-bar .nav .nav-item .nav-link {

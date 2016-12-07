@@ -13,9 +13,9 @@
     </div>
     <div class="row info">
       <div class="col-xs-12 text-xs-center">
-        <a (click)="isCollapsed = !isCollapsed">User Name</a>
+        <a class="btn" (click)="isCollapsed = !isCollapsed">User Name <b class="fa fa-caret-down"></b></a>
         <div [ngbCollapse]="isCollapsed">
-          <ul class="nav">
+          <ul class="nav nav-pills nav-stacked">
             <li class="nav-item">
               <a [routerLink]="['/profile']" class="nav-link">Profile</a>
             </li>
