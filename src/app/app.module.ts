@@ -20,6 +20,7 @@ import { JewelerProfileComponent } from './jeweler-profile/jeweler-profile.compo
 import { CreativeResourcesComponent } from './creative-resources/creative-resources.component';
 import { JewelerShowsComponent } from './jeweler-shows/jeweler-shows.component';
 import { TrainingPageComponent } from './training-page/training-page.component';
+import {OrdersService} from "./orders/orders.service";
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { TrainingPageComponent } from './training-page/training-page.component';
       apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
     })
   ],
-  providers: [],
+  providers: [
+    OrdersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

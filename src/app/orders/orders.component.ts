@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// import { Http, Response } from '@angular/http';
+// import { Observable } from 'rxjs/Rx';
+import {OrdersService} from "./orders.service";
 
 @Component({
   selector: 'pd-orders',
@@ -6,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.less']
 })
 export class OrdersComponent implements OnInit {
+  orders = [];
 
-  constructor() { }
+  constructor(private orderService: OrdersService) {
+
+  }
 
   ngOnInit() {
+    this.orders = this.orderService.getOrders();
+  }
+
+  getStatus(status) {
+    console.log(status);
+    if (status === 'Shipped')
+      return 'table-success';
+    else if (status === 'Processing')
+      return 'table-warning';
+    else if (status === 'Errors')
+      return 'table-danger';
+    else if (status === 'Submitted')
+      return 'table-info';
+
   }
 
 }
