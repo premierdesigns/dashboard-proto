@@ -5,6 +5,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { AgmCoreModule } from  'angular2-google-maps/core';
 
 import {AppComponent} from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -43,7 +44,10 @@ import { TrainingPageComponent } from './training-page/training-page.component';
     HttpModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
