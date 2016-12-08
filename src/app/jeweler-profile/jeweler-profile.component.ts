@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {JewelerService} from "./jeweler-profile.service";
 
 @Component({
   selector: 'pd-jeweler-profile',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JewelerProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jewelerService: JewelerService) { }
 
   ngOnInit() {
+
   }
 
 }
