@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule, JsonpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import { ChartsModule } from 'ng2-charts/ng2-charts';
@@ -20,7 +20,8 @@ import { JewelerProfileComponent } from './jeweler-profile/jeweler-profile.compo
 import { CreativeResourcesComponent } from './creative-resources/creative-resources.component';
 import { JewelerShowsComponent } from './jeweler-shows/jeweler-shows.component';
 import { TrainingPageComponent } from './training-page/training-page.component';
-import {OrdersService} from "./orders/orders.service";
+import {OrderService} from "./orders/order.service";
+import {JewelerService} from "./jeweler-profile/jeweler.service";
 
 
 @NgModule({
@@ -51,8 +52,10 @@ import {OrdersService} from "./orders/orders.service";
     })
   ],
   providers: [
-    OrdersService
+    OrderService,
+	JewelerService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

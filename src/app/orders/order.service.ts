@@ -228,7 +228,7 @@ const ORDERS = [{
 }];
 
 @Injectable()
-export class OrdersService {
+export class OrderService {
 
   constructor() {
   }

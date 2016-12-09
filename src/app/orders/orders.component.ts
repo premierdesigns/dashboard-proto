@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { Http, Response } from '@angular/http';
 // import { Observable } from 'rxjs/Rx';
-import {OrdersService} from "./orders.service";
+import {OrderService} from "./order.service";
 
 @Component({
   selector: 'pd-orders',
@@ -11,7 +11,7 @@ import {OrdersService} from "./orders.service";
 export class OrdersComponent implements OnInit {
   orders = [];
 
-  constructor(private orderService: OrdersService) {
+  constructor(private orderService: OrderService) {
 
   }
 
