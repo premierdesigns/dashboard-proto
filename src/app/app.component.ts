@@ -8,7 +8,3 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pd works!';
 }
-
-export class colorPalette {
-
-}
