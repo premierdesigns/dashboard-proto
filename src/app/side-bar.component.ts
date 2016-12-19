@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pd-side-bar',

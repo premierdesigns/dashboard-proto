@@ -6,6 +6,15 @@
     <p class="card-text">
       This page will hold all of the creative resources for jewelers on a single full-page card with filters along the top to find exactly what they need.
     </p>
+    <div class="card-columns">
+      <div class="card card-inverse" *ngFor="let resource of resources">
+        <img src="{{ resource.url }}" alt="..." class="card-img">
+        <div class="card-img-overlay">
+          <p class="card-text">{{ resource.description }}</p>
+          <h5 class="card-title">{{ resource.title }}</h5>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

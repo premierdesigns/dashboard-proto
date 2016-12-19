@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UiColors} from "./uiColors.service";
 
 @Component({
   selector: 'pd-root',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pd works!';
-  sideBarColor: string;
-  constructor() {
-    this.sideBarColor = 'purple';
+  theme = {};
+  constructor(private uiColors: UiColors) {
+    this.theme = uiColors.getTheme();
   }
 }

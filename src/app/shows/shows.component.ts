@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShowsService } from './shows.service';
 
 @Component({
   selector: 'pd-shows',
@@ -6,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shows.component.less']
 })
 export class ShowsComponent implements OnInit {
+  shows = [];
   title: string = 'My first angular2-google-maps project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 32.889351;
+  lng: number = -96.978761;
 
-  constructor() { }
+  constructor(private showsService: ShowsService) { }
 
   ngOnInit() {
+    this.shows = this.showsService.getShows();
   }
 
 }

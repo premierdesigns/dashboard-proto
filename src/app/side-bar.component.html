@@ -8,18 +8,22 @@
 
   <div class="user">
     <div class="photo">
-      <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="" class="img-fluid rounded-circle">
     </div>
     <div class="row info">
       <div class="col-xs-12 text-xs-center">
-        <a class="btn" (click)="isCollapsed = !isCollapsed">User Name <b class="fa fa-caret-down"></b></a>
+        <a class="btn profile-dropdown" (click)="isCollapsed = !isCollapsed">User Name <b class="fa fa-fw fa-caret-down"></b></a>
         <div [ngbCollapse]="isCollapsed">
           <ul class="nav nav-pills nav-stacked">
             <li class="nav-item">
-              <a [routerLink]="['/profile']" class="nav-link">Profile</a>
+              <a [routerLink]="['/profile']" routerLinkActive="active" routerLink="/profile" class="nav-link">Profile</a>
             </li>
-            <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+            <li class="nav-item">
+              <a [routerLink]="['/account']" routerLinkActive="active" class="nav-link">Account</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/settings']" routerLinkActive="active" class="nav-link">Settings</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -38,7 +42,7 @@
       <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/shows']"><i class="fa fa-fw fa-gift"></i>Shows</a>
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw fa-gift"></i>Events</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i class="fa fa-fw fa-picture-o"></i>Resources</a>

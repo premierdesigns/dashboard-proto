@@ -15,7 +15,21 @@ export class SalesCardComponent implements OnInit {
   public doughnutChartData:number[] = [25, 50, 33];
   public chartType:string = 'doughnut';
   public chartOptions:any = {
-    fontFamily: "Lato",
+    animation: {
+      animateRotate: true,
+      animateScale: true,
+      easing: 'easeInOutCubic'
+    },
+    legend: {
+      display: true,
+      position: 'bottom',
+      fontFamily: "Lato",
+      fontColor: '#8a8c8d'
+    },
+    tooltips: {
+      bodyFontSize: 16
+    },
+    circumference: 2*Math.PI,
     defaultFontSize: 24
   }
   public chartColors:Array<any> = [

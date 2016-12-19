@@ -7,6 +7,10 @@ import {JewelerProfileComponent} from "./jeweler-profile/jeweler-profile.compone
 import {FamilyTreeComponent} from "./family-tree/family-tree.component";
 import {CreativeResourcesComponent} from "./creative-resources/creative-resources.component";
 import {TrainingPageComponent} from "./training-page/training-page.component";
+import {EventsComponent} from "./events/events.component";
+import {JewelerAccountComponent} from "./jeweler-account/jeweler-account.component";
+import {SettingsComponent} from "./settings/settings.component";
+import {StarWarsComponent} from "./star-wars/star-wars.component";
 
 // This is where we setup our routes!
 const APP_ROUTES: Routes = [
@@ -17,7 +21,11 @@ const APP_ROUTES: Routes = [
   { path: 'profile', component: JewelerProfileComponent },
   { path: 'familytree', component: FamilyTreeComponent },
   { path: 'resources', component: CreativeResourcesComponent },
-  { path: 'training', component: TrainingPageComponent }
+  { path: 'training', component: TrainingPageComponent },
+  { path: 'events', component: EventsComponent},
+  { path: 'account', component: JewelerAccountComponent},
+  { path: 'settings', component: SettingsComponent},
+  { path: 'starwars', component: StarWarsComponent }
 ];
 
 @NgModule({

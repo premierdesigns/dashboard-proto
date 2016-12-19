@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 // import { Http, Response } from '@angular/http';
-// import { Observable } from 'rxjs/Rx';
-import {OrderService} from "./order.service";
+
+import { Order } from './order';
+import { OrderService } from "./order.service";
 
 @Component({
   selector: 'pd-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.less']
+  styleUrls: ['./orders.component.less'],
+  providers: [OrderService]
 })
 export class OrdersComponent implements OnInit {
-  orders = [];
+  title = 'Orders';
+
+  orders: Order[];
+  selectedOrder: Order;
 
   constructor(private orderService: OrderService) {
 
   }
 
+  getOrders(): void {
+    this.orderService.getOrders().then(orders => this.orders = orders);
+  }
+
   ngOnInit() {
-    this.orders = this.orderService.getOrders();
+    this.getOrders();
   }
 
   getStatus(status) {
@@ -30,6 +39,10 @@ export class OrdersComponent implements OnInit {
     else if (status === 'Submitted')
       return 'table-info';
 
+  }
+
+  onSelect(order: Order): void {
+    this.selectedOrder = order;
   }
 
 }

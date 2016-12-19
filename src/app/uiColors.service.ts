@@ -1,7 +1,22 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 
 @Injectable()
 
-export class uiColors {
-  getUiColors(): void {}
+export class UiColors {
+  theme = {currentBackground: 'purple'};
+  constructor() {};
+
+  // ngOnInit() {
+  //   this.theme = {
+  //     currentBackground: 'purple'
+  //   };
+  // }
+
+  getTheme() {
+    return this.theme;
+  }
+
+  setTheme(key, value) {
+    this.theme[key] = value;
+  }
 }

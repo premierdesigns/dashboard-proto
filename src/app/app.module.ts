@@ -21,11 +21,22 @@ import {CreativeResourcesComponent} from './creative-resources/creative-resource
 import {JewelerShowsComponent} from './jeweler-shows/jeweler-shows.component';
 import {TrainingPageComponent} from './training-page/training-page.component';
 import {OrderService} from "./orders/order.service";
+import {ShowsService} from "./shows/shows.service";
 import {JewelerService} from "./jeweler-profile/jeweler.service";
 import {MarkdownModule} from 'angular2-markdown';
 import {PromoCarouselComponent} from './dashboard/promo-carousel/promo-carousel.component';
 import {BillingInfoComponent} from './jeweler-profile/billing-info/billing-info.component';
 import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-info.component';
+import {SidebarColorDirective} from './sidebar-color.directive';
+import {UiColors} from "./uiColors.service";
+import {EventsComponent} from './events/events.component';
+import {ResourcesService} from "./creative-resources/resources.service";
+import {JewelerAccountComponent} from './jeweler-account/jeweler-account.component';
+import {SettingsComponent} from './settings/settings.component';
+import {StarWarsComponent} from './star-wars/star-wars.component';
+import {StarWarsService} from "./star-wars/star-wars.service";
+import {AccountService} from "./jeweler-account/account.service";
+import {SettingsService} from "./settings/settings.service";
 
 
 @NgModule({
@@ -45,7 +56,12 @@ import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-in
     TrainingPageComponent,
     PromoCarouselComponent,
     BillingInfoComponent,
-    ShippingInfoComponent
+    ShippingInfoComponent,
+    SidebarColorDirective,
+    EventsComponent,
+    JewelerAccountComponent,
+    SettingsComponent,
+    StarWarsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +78,13 @@ import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-in
   providers: [
     OrderService,
     JewelerService,
-    Title
+    Title,
+    ShowsService,
+    UiColors,
+    ResourcesService,
+    StarWarsService,
+    AccountService,
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })
