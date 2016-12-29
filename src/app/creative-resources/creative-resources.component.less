@@ -1,0 +1,31 @@
+@import "../../assets/bootstrap/css/bootstrap-flex.css";
+
+.resCard {
+  height: 144px;
+  overflow: hidden;
+  //background-image: url("https://source.unsplash.com/random");
+  background-size: 150%;
+  background-position: center center;
+  margin: .75rem;
+  transition: background-size 1s;
+  -webkit-transition: background-size 1s;
+
+  span.social-share {
+    margin: 8px 8px 0 0;
+    font-weight: bold;
+    color: #fff;
+
+    opacity: 0;
+    transition: opacity .3s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -webkit-transition: opacity .3s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  }
+}
+
+.resCard:hover {
+  cursor: pointer;
+  background-size: cover;
+}
+
+.resCard:hover span.social-share {
+  opacity: 1;
+}

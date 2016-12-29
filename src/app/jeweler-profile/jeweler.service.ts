@@ -9,7 +9,7 @@ export class JewelerService {
       middleName: 'Lee',
       lastName: 'Harris',
       address1: '1234 Main Street',
-      address2: '',
+      address2: 'Suite 100',
       city: 'Irving',
       state: 'TX',
       zipCode: '12345',

@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-9">
+
+    <div class="card">
+      <div class="card-header">
+
+        <h4 class="card-title float-md-left">
+          {{ title }}
+        </h4>
+
+        <div class="float-lg-right">
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-addon" (click)="d.toggle()" >
+                  <i class="icon-calendar"></i>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="example" class="table table-hover" cellspacing="0">
+          <thead>
+          <tr>
+            <th style="width: 30px;">&nbsp;</th>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let order of orders" [ngClass]="getStatus(order.orderStatus)"
+              [class.selected]="order === selectedOrder" (click)="onSelect(order)">
+            <td [ngSwitch]="order.orderType" class="text-xs-center" style="width: 30px;">
+              <template [ngSwitchCase]="'Jewelry Show'">
+                <i class="icon-arrow-down"></i>
+              </template>
+              <template [ngSwitchCase]="!'Jewelry Show'">&nbsp;</template>
+            </td>
+            <td>{{ order.id }}</td>
+            <td>{{ order.firstName }} {{ order.lastName }}</td>
+            <td>{{ order.orderType }}</td>
+            <td>{{ order.orderDate }}</td>
+            <td>
+              <a href="#">
+                <i class="fa fa-fw fa-edit"></i>
+              </a>
+              <a>
+                <i class="fa fa-fw fa-trash-o"></i>
+              </a>
+              <a>
+                <i class="fa fa-fw fa-send-o"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-3" *ngIf="selectedOrder">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">
+          {{selectedOrder.firstName}} {{selectedOrder.lastName}}
+        </h4>
+        <ul class="list-unstyled">
+          <li>{{ selectedOrder.id }}</li>
+          <li><b>Order Type: </b>{{ selectedOrder.orderType }}</li>
+          <li><b>Order Submitted: </b>{{ selectedOrder.orderDate }}</li>
+          <li><b>Order Status: </b>{{ selectedOrder.orderStatus }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <markdown>
+    #### FUNCTIONALITY
+
+    * Orders will show up in a data table for the jewelers to take action on
+    * Orders submitted to the jeweler either through the jewelers personal page or created by the jeweler show here
+    * Row color will indicate the status of the order (submitted to premier, processing, shipped, etc...)
+    * The action column will give jewelers the ability to edit, submit or delete an order
+    * Columns should be sortable by the header column
+    * Search box in the card header to search anything in the orders and a date box to search by date
+
+
+    #### QUESTIONS
+
+    #### IDEAS
+
+    #### DATA
+  </markdown>
+</pre>

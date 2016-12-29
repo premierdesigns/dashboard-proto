@@ -12,7 +12,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrdersComponent} from './orders/orders.component';
 import {ShowsComponent} from './shows/shows.component';
 import {SideBarComponent} from './side-bar.component';
-import {ActionBarComponent} from './action-bar.component';
+import {ActionBarComponent} from './action-bar/action-bar.component';
 import {ActionBarSearchComponent} from './action-bar-search/action-bar-search.component';
 import {SalesCardComponent} from './dashboard/sales-card/sales-card.component';
 import {FamilyTreeComponent} from './family-tree/family-tree.component';
@@ -37,6 +37,17 @@ import {StarWarsComponent} from './star-wars/star-wars.component';
 import {StarWarsService} from "./star-wars/star-wars.service";
 import {AccountService} from "./jeweler-account/account.service";
 import {SettingsService} from "./settings/settings.service";
+import {RewardCardComponent} from './jeweler-account/reward-card/reward-card.component';
+import {ContractInfoComponent} from './jeweler-account/contract-info/contract-info.component';
+import {PersonalWebpageComponent} from './jeweler-account/personal-webpage/personal-webpage.component';
+import {PersonalEcommerceComponent} from './jeweler-account/personal-ecommerce/personal-ecommerce.component';
+import {ContractInfoService} from "./jeweler-account/contract-info/contract-info.service";
+import {SqueezeBoxModule} from 'squeezebox';
+import {ActionIconsComponent} from './orders/action-icons/action-icons.component';
+import {OrderStatusDirective} from './orders/order-status.directive';
+import {PromotionsComponent} from './promotions/promotions.component';
+import {PromotionsService} from "./promotions/promotions-service.service";
+import { CommunicationsComponent } from './settings/communications/communications.component';
 
 
 @NgModule({
@@ -61,7 +72,16 @@ import {SettingsService} from "./settings/settings.service";
     EventsComponent,
     JewelerAccountComponent,
     SettingsComponent,
-    StarWarsComponent
+    StarWarsComponent,
+    ActionBarComponent,
+    RewardCardComponent,
+    ContractInfoComponent,
+    PersonalWebpageComponent,
+    PersonalEcommerceComponent,
+    ActionIconsComponent,
+    OrderStatusDirective,
+    PromotionsComponent,
+    CommunicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +93,8 @@ import {SettingsService} from "./settings/settings.service";
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
     }),
-    MarkdownModule
+    MarkdownModule,
+    SqueezeBoxModule
   ],
   providers: [
     OrderService,
@@ -84,7 +105,9 @@ import {SettingsService} from "./settings/settings.service";
     ResourcesService,
     StarWarsService,
     AccountService,
-    SettingsService
+    SettingsService,
+    ContractInfoService,
+    PromotionsService
   ],
   bootstrap: [AppComponent]
 })

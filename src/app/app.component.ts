@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {UiColors} from "./uiColors.service";
+import {SideBarComponent} from "./side-bar.component";
 
 @Component({
   selector: 'pd-root',
@@ -11,5 +12,13 @@ export class AppComponent {
   theme = {};
   constructor(private uiColors: UiColors) {
     this.theme = uiColors.getTheme();
+  }
+
+  @ViewChild(SideBarComponent)sideNav:any;
+  private toggleNav:any;
+  ngAfterViewInit():any {
+    this.toggleNav=()=> {
+      this.sideNav.toggle();
+    }
   }
 }

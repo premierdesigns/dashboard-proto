@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-// import { Http, Response } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 import { Order } from './order';
 import { OrderService } from "./order.service";
+
+import { OrderStatusDirective } from './order-status.directive';
+import {count} from "rxjs/operator/count";
 
 @Component({
   selector: 'pd-orders',
@@ -12,13 +15,11 @@ import { OrderService } from "./order.service";
 })
 export class OrdersComponent implements OnInit {
   title = 'Orders';
-
+  public isCollapsed = true;
   orders: Order[];
   selectedOrder: Order;
 
-  constructor(private orderService: OrderService) {
-
-  }
+  constructor(private orderService: OrderService ) { }
 
   getOrders(): void {
     this.orderService.getOrders().then(orders => this.orders = orders);
@@ -31,15 +32,18 @@ export class OrdersComponent implements OnInit {
   getStatus(status) {
     console.log(status);
     if (status === 'Shipped')
-      return 'table-success';
+      return 'success';
     else if (status === 'Processing')
-      return 'table-warning';
+      return 'warning';
     else if (status === 'Errors')
-      return 'table-danger';
+      return 'danger';
     else if (status === 'Submitted')
-      return 'table-info';
-
+      return 'info';
   }
+
+  // typeCount(orderType): void {
+  //   return count
+  // }
 
   onSelect(order: Order): void {
     this.selectedOrder = order;

@@ -10,6 +10,7 @@ import {Subscription} from "rxjs";
   styleUrls: ['./jeweler-profile.component.less']
 })
 export class JewelerProfileComponent implements OnInit, OnDestroy {
+  title = 'Profile';
   jeweler: Jeweler;
   private isEdit = true;
   private subscriptions: Subscription[] = [];
@@ -21,8 +22,6 @@ export class JewelerProfileComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(jeweler: Jeweler) {
-    // const newJeweler = new Jeweler(jeweler.firstName, jeweler.middleName, jeweler.lastName, jeweler.address1, jeweler.address2,
-    //                                 jeweler.city, jeweler.state, jeweler.zipCode, jeweler.email, jeweler.phone, jeweler.id);
     if (!this.isEdit) {
       this.jewelerService.createJeweler(jeweler);
     }

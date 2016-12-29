@@ -7,4 +7,6 @@ export class Resource {
   title: string;
   url: string;
   description: string;
+  fileType: string;
+  jewelerLevel: string;
 }

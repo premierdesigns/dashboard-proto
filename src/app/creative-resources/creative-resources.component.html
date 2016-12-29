@@ -6,15 +6,40 @@
     <p class="card-text">
       This page will hold all of the creative resources for jewelers on a single full-page card with filters along the top to find exactly what they need.
     </p>
-    <div class="card-columns">
-      <div class="card card-inverse" *ngFor="let resource of resources">
-        <img src="{{ resource.url }}" alt="..." class="card-img">
-        <div class="card-img-overlay">
-          <p class="card-text">{{ resource.description }}</p>
-          <h5 class="card-title">{{ resource.title }}</h5>
-        </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 resCard pr-0" *ngFor="let resource of resources" [ngStyle]="{'background-image': 'url(' + resource.url + ')'}">
+        <span class="social-share float-xs-right text-xs-right">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a>
+                <i class="icon-social-facebook"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a>
+                <i class="fa fa-fw fa-envelope-o"></i>
+              </a>
+            </li>
+          </ul>
+        </span>
+        <!--<img class="img-fluid" src="https://source.unsplash.com/random">-->
+        <p class="lead">{{resource.title}}</p>
       </div>
     </div>
+
+    <!--<div class="row">-->
+      <!--<div class="col-xs-12 col-lg-2" *ngFor="let resource of resources">-->
+        <!--<div class="card card-inverse">-->
+          <!--<img src="{{resource.url}}" alt="..." class="card-img img-fluid">-->
+          <!--<div class="card-img-overlay">-->
+            <!--<p class="card-text">{{resource.title}}</p>-->
+            <!--<p class="card-text">{{resource.description}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
   </div>
 </div>
 

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.less']
 })
 export class SettingsComponent implements OnInit {
+  title = "Settings";
 
   constructor() { }
 

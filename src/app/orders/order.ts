@@ -11,5 +11,6 @@ export class Order {
   orderDate: string;
   orderType: string;
   orderStatus: string;
+  progress: number;
   showOrders?: any[];
 }

@@ -1,3 +1,34 @@
-<p>
-  settings works!
-</p>
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" [routerLink]="['/dashboard']">Home</a>
+  <span class="breadcrumb-item active">{{title}}</span>
+</nav>
+
+<div class="card">
+  <ngb-tabset>
+    <ngb-tab title="Communications">
+      <template ngbTabContent>
+        <div class="card-block">
+          <pd-communications></pd-communications>
+        </div>
+      </template>
+    </ngb-tab>
+    <ngb-tab title="UI?">
+      <!--<template ngbTabTitle><b>Fancy</b> title</template>-->
+      <template ngbTabContent>
+        <div class="card-block">
+          <p>This controls portal User Interface options.</p>
+        </div>
+      </template>
+    </ngb-tab>
+    <!--<ngb-tab title="Disabled" [disabled]="true">-->
+      <!--<template ngbTabContent>-->
+        <!--<div class="card-block">-->
+          <!--<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth-->
+            <!--master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh-->
+            <!--dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum-->
+            <!--iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>-->
+        <!--</div>-->
+      <!--</template>-->
+    <!--</ngb-tab>-->
+  </ngb-tabset>
+</div>

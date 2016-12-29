@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 
 @Injectable()
 export class StarWarsService {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http) {
+  }
 
-  swapiRequest:string = '/';
+  swapiRequest: string = '/';
 
   getSwapi() {
     return this._http.get('http://swapi.co/api' + this.swapiRequest)
