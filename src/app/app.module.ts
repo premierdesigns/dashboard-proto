@@ -42,7 +42,6 @@ import {ContractInfoComponent} from './jeweler-account/contract-info/contract-in
 import {PersonalWebpageComponent} from './jeweler-account/personal-webpage/personal-webpage.component';
 import {PersonalEcommerceComponent} from './jeweler-account/personal-ecommerce/personal-ecommerce.component';
 import {ContractInfoService} from "./jeweler-account/contract-info/contract-info.service";
-import {SqueezeBoxModule} from 'squeezebox';
 import {ActionIconsComponent} from './orders/action-icons/action-icons.component';
 import {OrderStatusDirective} from './orders/order-status.directive';
 import {PromotionsComponent} from './promotions/promotions.component';
@@ -93,8 +92,7 @@ import { CommunicationsComponent } from './settings/communications/communication
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
     }),
-    MarkdownModule,
-    SqueezeBoxModule
+    MarkdownModule
   ],
   providers: [
     OrderService,
