@@ -6,6 +6,7 @@ import { OrderService } from "./order.service";
 
 import { OrderStatusDirective } from './order-status.directive';
 import {count} from "rxjs/operator/count";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'pd-orders',
@@ -16,17 +17,14 @@ import {count} from "rxjs/operator/count";
 export class OrdersComponent implements OnInit {
   title = 'Orders';
   public isCollapsed = true;
-  orders: Order[];
+  orders: Observable<Order[]>;
   selectedOrder: Order;
 
   constructor(private orderService: OrderService ) { }
 
-  getOrders(): void {
-    this.orderService.getOrders().then(orders => this.orders = orders);
-  }
-
   ngOnInit() {
-    this.getOrders();
+    this.orders = this.orderService.orders; // subscribe to the entire collection
+    this.orderService.loadAll();  // load all the orders
   }
 
   getStatus(status) {
