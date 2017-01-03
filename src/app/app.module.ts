@@ -1,7 +1,7 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpModule, BaseRequestOptions, Http} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import {ChartsModule} from 'ng2-charts/ng2-charts';
@@ -47,6 +47,7 @@ import {OrderStatusDirective} from './orders/order-status.directive';
 import {PromotionsComponent} from './promotions/promotions.component';
 import {PromotionsService} from "./promotions/promotions-service.service";
 import { CommunicationsComponent } from './settings/communications/communications.component';
+import {MockBackend} from "@angular/http/testing";
 
 
 @NgModule({
@@ -105,7 +106,14 @@ import { CommunicationsComponent } from './settings/communications/communication
     AccountService,
     SettingsService,
     ContractInfoService,
-    PromotionsService
+    PromotionsService,
+    BaseRequestOptions,
+    MockBackend,
+    {
+      provide: Http,
+      deps: [MockBackend, BaseRequestOptions],
+      useFactory: (backend, options) => { return new Http(backend, options); }
+    }
   ],
   bootstrap: [AppComponent]
 })
