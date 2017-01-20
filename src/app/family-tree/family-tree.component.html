@@ -1,20 +1,27 @@
+<h4>{{title}}</h4>
+
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title">
-      Family Tree
-    </h4>
-    <p class="card-text">
-      Single, full-page card showing a jeweler their "family tree".<br>Large left section with faces in "bubble" smaller section to the right with filtered data.<br />
-      Icon filters along the top to drill-down to specific information.
-    </p>
+    <div class="row">
+      <div class="col-sm-12 col-lg-8">
+        <pd-my-family [jeweler]="jeweler" [downlinePeople]="downlinePeople" [firstLevel]="firstLevel"></pd-my-family>
+      </div>
+      <div class="col-sm-12 col-lg-4">
+        <pd-data-cards></pd-data-cards>
+      </div>
+    </div>
   </div>
 </div>
 
 
 
 <pre>
-  <markdown>
+  <code>
     #### FUNCTIONALITY
+
+    Single, full-page card showing a jeweler their "family tree".
+    Large left section with faces in "bubble" smaller section to the right with filtered data.
+    Icon filters along the top to drill-down to specific information.
 
     - Easier, simpler access to how the jewelers 'family' (downline) is doing
     - Ability to attach a name with a face by bringing in that jeweler's profile picture that they have put on their portal
@@ -25,5 +32,5 @@
     #### QUESTIONS
     #### IDEAS
     #### DATA
-  </markdown>
+  </code>
 </pre>

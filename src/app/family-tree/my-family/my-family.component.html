@@ -1,0 +1,18 @@
+<h6>jeweler level</h6>
+
+<h6>Child Level</h6>
+<div class="row family-row justify-content-around mb-3">
+  <div *ngFor="let person of firstLevel" class="individual" [@createBubble]>
+    <!--<span class="name">{{person.name.first}} {{person.name.last}}</span>-->
+    <img src="{{person.picture.large}}" class="img-fluid rounded-circle userPhoto">
+  </div>
+</div>
+
+<h6>Grandchild Level</h6>
+<div class="row justify-content-around mb-3">
+  <p *ngFor="let person of downlinePeople" class="p-1">
+    <img class="rounded-circle img-fluid" src="{{person.picture.medium}}">
+  </p>
+</div>
+
+<h6>Great Grandchildren Level</h6>

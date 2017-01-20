@@ -1,31 +1,13 @@
 <div class="row">
-  <div class="col-md-4">
-    <div class="card card-block card-primary card-inverse">
-      <h5 class="card-title">title1</h5>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card card-block card-inverse card-danger">
-      <h5 class="card-title">title2</h5>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card card-block">
-      <h5 class="card-title">title3</h5>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
+  <div class="col-sm-12">
     <div class="card card-block">
       <h4 class="card-title">Upcoming Shows</h4>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-sm-6">
 
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action" *ngFor="let show of shows">
-              <span class="tag tag-default tag-pill float-xs-right">{{ show.guestCount }}</span>
+              <span class="tag tag-default tag-pill float-sm-right">{{ show.guestCount }}</span>
               <img src="{{ show.hostPicture }}" class="img-fluid float-md-left rounded-circle mr-2" />
               <h5 class="list-group-item-heading">{{ show.hostessFirstName}} {{ show.hostessLastName}}</h5>
               <p class="list-group-item-text">{{ show.locationAddress }} {{ show.locationCity }}, {{ show.locationState }} {{ show.locationZip }}</p>
@@ -33,7 +15,7 @@
           </div>
 
         </div>
-        <div class="col-xs-6">
+        <div class="col-sm-6">
           <sebm-google-map [latitude]="lat" [longitude]="lng">
             <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
           </sebm-google-map>
@@ -46,7 +28,7 @@
 
 
 <pre>
-  <markdown>
+  <code>
     #### FUNCTIONALITY
 
     * Top cards can display some show data (number of shows this year vs. last year, number of shows in downline, etc)
@@ -58,5 +40,5 @@
     #### QUESTIONS
     #### IDEAS
     #### DATA
-  </markdown>
+  </code>
 </pre>

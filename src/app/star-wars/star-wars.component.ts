@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {StarWarsService} from "./star-wars.service";
-import {error} from "util";
 
 @Component({
   selector: 'pd-star-wars',

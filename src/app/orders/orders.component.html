@@ -1,106 +1,151 @@
-<div class="row">
-  <div class="col-xs-12 col-lg-9">
+<pd-orders-stats></pd-orders-stats>
 
-    <div class="card">
-      <div class="card-header">
-
-        <h4 class="card-title float-md-left">
-          {{ title }}
-        </h4>
-
-        <div class="float-lg-right">
-          <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
-                       #d="ngbDatepicker">
-                <div class="input-group-addon" (click)="d.toggle()">
-                  <i class="icon-calendar"></i>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div ngbDropdown class="d-inline-block float-lg-right mr-1">
-          <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Filter</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <button class="dropdown-item"><span class="tag tag-pill tag-default mr-1">2</span>Open</button>
-            <button class="dropdown-item"><span class="tag tag-pill tag-info mr-1">2</span>Submitted</button>
-            <button class="dropdown-item"><span class="tag tag-pill tag-warning mr-1">2</span>Processing</button>
-            <button class="dropdown-item"><span class="tag tag-pill tag-success mr-1">2</span>Shipped</button>
-            <button class="dropdown-item"><span class="tag tag-pill tag-danger mr-1">2</span>Errors</button>
-            <div class="dropdown-divider"></div>
-            <button class="dropdown-item"><span class="icon-close mr-1"></span>Clear All Filters</button>
-          </div>
-        </div>
-
+<div class="card">
+  <div class="card-header">
+    <div class="row order-header">
+      <!-- Order Type Header -->
+      <div class="col text-center">
+        <span class="hidden-md-down">{{title}} </span><i class="icon-people small"></i>
       </div>
-
-      <!-- HEADER ROW -->
-      <div class="row">
-        <div class="col-xs-3">
-          <blockquote class="blockquote blockquote-reverse">
-            <p class="mb-0">ORDER<i class="fa fa-fw fa-caret-down ml-1"></i></p>
-          </blockquote>
-        </div>
-        <div class="col-xs-3">
-          <blockquote class="blockquote blockquote-reverse">
-            <p class="mb-0">STATUS<i class="fa fa-fw fa-caret-down ml-1"></i></p>
-          </blockquote>
-        </div>
-        <div class="col-xs-3">
-          <blockquote class="blockquote blockquote-reverse">
-            <p class="mb-0">DATE<i class="fa fa-fw fa-caret-down ml-1"></i></p>
-          </blockquote>
-        </div>
-        <div class="col-xs-3">
-          <blockquote class="blockquote blockquote-reverse">
-            <p class="mb-0">ACTION<i class="fa fa-fw fa-caret-down ml-1"></i></p>
-          </blockquote>
-        </div>
+      <!-- Customer Info Header -->
+      <div class="col text-center">
+        <!--show on larger screens-->
+        <span class="hidden-md-down">Customer Info.</span>
+        <!--for mobile screens-->
+        <span class="hidden-lg-up"><i class="fa fa-address-card-o"></i></span>
       </div>
-
-      <div class="list-group">
-        <div *ngFor="let order of orders" class="list-group-item list-group-item-action"
-             pdOrderStatus="{{order.orderStatus}}">
-          <div class="row">
-            <div class="col-xs-3 ordInfo" [ngSwitch]="order.orderType">
-              <span class="ordType" *ngSwitchCase="'Personal'">
-                <i class="icon icon-emotsmile"></i>
-              </span>
-              <span class="ordType" *ngSwitchCase="'Event'">
-                <i class="icon icon-people"></i>
-              </span>
-              <span class="ordType" *ngSwitchCase="'Individual'">
-                <i class="icon icon-user"></i>
-              </span>
-              <span class="ordPerson">{{order.id}} - {{order.firstName}} {{order.lastName}}</span>
-            </div>
-
-            <!-- Progress / Status -->
-            <div class="col-xs-3" [ngSwitch]="order.orderStatus">
-              <div>{{order.orderStatus}}</div>
-              <progress class="progress progress-striped mb-0" value="{{order.progress}}" max="100"
-                        aria-describedby="example-caption-2"></progress>
-            </div>
-
-            <!-- Date Column -->
-            <div class="col-xs-3 mt-1">
-              <span class="mt-1">{{order.orderDate}}</span>
-            </div>
-            <!-- Action Icons Column -->
-            <div class="col-xs-3 align-middle mt-1">
-              <pd-action-icons></pd-action-icons>
-            </div>
-          </div>
-        </div>
+      <!-- Date Header -->
+      <div class="col text-center">
+        <!--show on larger screens-->
+        <span class="hidden-md-down">Date</span>
+        <!--for mobile screens-->
+        <span class="hidden-lg-up"><i class="fa fa-calendar-o"></i></span>
       </div>
+      <!-- Order Status Header -->
+      <div class="col text-center">
+        <!--show on larger screens-->
+        <span class="hidden-md-down">Status</span>
+        <!--for mobile screens-->
+        <span class="hidden-lg-up"><i class="icon-location-pin"></i></span>
+      </div>
+      <!-- Payment Info Header -->
+      <div class="col text-center">
+        <!--show on larger screens-->
+        <span class="hidden-md-down">Payment Method</span>
+        <!--for mobile screens-->
+        <span class="hidden-lg-up"><i class="icon-wallet"></i></span>
+      </div>
+      <div class="col hidden-md-down">&nbsp;</div>
     </div>
   </div>
+  <pd-accordian [orders]="orders"></pd-accordian>
 </div>
 
-<markdown>
+<!--<div class="card">-->
+
+  <!--<div>-->
+
+    <!--&lt;!&ndash;"Body" Row&ndash;&gt;-->
+    <!--<div *ngFor="let order of orders" [ngSwitch]="order.orderType">-->
+      <!--<div class="row py-3 align-items-center order-row mx-0">-->
+
+        <!--<div class="col text-center">-->
+          <!--<span *ngSwitchCase="'Personal'">-->
+            <!--<i class="icon-user-female"></i>-->
+          <!--</span>-->
+          <!--<span *ngSwitchCase="'Event'">-->
+            <!--<i class="icon-event pl-3"></i>-->
+            <!--<i class="icon-arrow-down small text-muted pull-right mr-1" style="margin-top: .35em;"></i>-->
+          <!--</span>-->
+          <!--<span *ngSwitchCase="'Individual'">-->
+            <!--<i class="icon-mustache"></i>-->
+          <!--</span>-->
+          <!--<span *ngSwitchCase="'Online'">-->
+            <!--<i class="icon-basket-loaded"></i>-->
+          <!--</span>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Customer Information &ndash;&gt;-->
+        <!--<div class="col text-center">-->
+          <!--<span class="d-block">-->
+            <!--<span class="hidden-sm-down">{{order.firstName}} {{order.lastName}}</span>-->
+            <!--<span class="hidden-md-up small">{{order.lastName}}</span>-->
+          <!--</span>-->
+          <!--<span class="text-muted small d-block hidden-sm-down">{{order.ordAddresses}}</span>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Order Date &ndash;&gt;-->
+        <!--<div class="col text-center">-->
+          <!--<span class="hidden-sm-down">{{order.orderDate}}</span>-->
+          <!--<span class="hidden-lg-up small">{{order.orderDate}}</span>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Order Status&ndash;&gt;-->
+        <!--<div class="col" [ngSwitch]="order.orderStatus">-->
+
+          <!--<h6 *ngSwitchCase="'Shipped'" class="text-success mb-0 small">{{order.orderStatus}} <span class="d-block text-muted small">{{order.shippingMethod}}</span></h6>-->
+          <!--<h6 *ngSwitchCase="'Processing'" class="text-warning mb-0">{{order.orderStatus}}</h6>-->
+          <!--<h6 *ngSwitchCase="'Errors'" class="text-danger mb-0">{{order.orderStatus}}</h6>-->
+          <!--<h6 *ngSwitchCase="'Submitted'" class="text-info mb-0">{{order.orderStatus}}</h6>-->
+          <!--<h6 *ngSwitchCase="'Open'" class="text-muted mb-0">{{order.orderStatus}}</h6>-->
+
+          <!--&lt;!&ndash;<div class="progress">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngSwitchCase="'Shipped'" class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngSwitchCase="'Processing'" class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngSwitchCase="'Errors'" class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngSwitchCase="'Submitted'" class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngSwitchCase="'Open'" class="progress-bar" role="progressbar" [ngStyle]="{'height': '1px'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Order Payment Type &ndash;&gt;-->
+        <!--<div class="col">-->
+          <!--<span class="d-block">{{order.paymentTypes}}</span>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash; Action Icons for larger displays &ndash;&gt;-->
+        <!--<div class="col hidden-md-down">-->
+          <!--<pd-action-icons></pd-action-icons>-->
+        <!--</div>-->
+
+      <!--</div>-->
+
+      <!--&lt;!&ndash; Action Icons for smaller displays&ndash;&gt;-->
+      <!--<div class="row mx-0 hidden-lg-up my-2">-->
+        <!--<div class="col">-->
+          <!--<pd-action-icons></pd-action-icons>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash;Bottom progress border.&ndash;&gt;-->
+      <!--<div class="row">-->
+        <!--<div class="col-12">-->
+          <!--<div class="progress" [ngSwitch]="order.orderStatus">-->
+            <!--<div [@showProgress] *ngSwitchCase="'Shipped'" class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
+            <!--<div [@showProgress] *ngSwitchCase="'Processing'" class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
+            <!--<div [@showProgress] *ngSwitchCase="'Errors'" class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
+            <!--<div [@showProgress] *ngSwitchCase="'Submitted'" class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
+            <!--<div [@showProgress] *ngSwitchCase="'Open'" class="progress-bar" role="progressbar" [ngStyle]="{'width': '0%' ,'height': '1px'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--&lt;!&ndash; Extra row for Event Orders &ndash;&gt;-->
+      <!--<div *ngSwitchCase="'Event'" class="row bg-faded p-2 mx-0">-->
+        <!--<div class="col">-->
+          <!--<span class="text-muted">Event row for orders from that event.</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<hr>
+
+<pre>
   #### FUNCTIONALITY
 
   * Orders show on individual rows
@@ -113,12 +158,9 @@
   * Search box in the card header to search anything in the orders and a date box to search by date
   * Icon on the far left indicates order type (personal, individual, group/event)
 
-#### QUESTIONS
+  #### QUESTIONS
 
-#### IDEAS
+  #### IDEAS
 
-#### DATA
-</markdown>
-
-
-<!--<div Markdown path="./readme.md"></div>-->
+  #### DATA
+</pre>

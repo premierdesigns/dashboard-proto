@@ -1,0 +1,43 @@
+.input-group {
+
+  input {
+    border: 0;
+    font-weight: 900;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    opacity: .5;
+    font-size: 0.8em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .input-group-addon {
+    border: 0;
+    background-color: transparent;
+    color: #E3E3E3;
+    font-size: 0.8em;
+    padding: 0 7px;
+    border-radius: 4px 0 0 4px;
+
+    i {
+      opacity: .75;
+      display: inline-block;
+      font: normal normal normal 14px/1;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -webkit-transition: opacity 1s;
+      transition: opacity 1s;
+    }
+  }
+
+}
+
+#universalSearchField {
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+#universalSearchField:hover, #universalSearchField:active, #universalSearchField:focus, #universalSearchField:hover + .input-group-addon i {
+  opacity: 1;
+  cursor: auto;
+}

@@ -1,59 +1,67 @@
-<div class="side-bar" (openNav)="toggleNav()">
-  <div class="navbar navbar-light">
-    <span class="navbar-text hidden-lg-up">JP</span>
-    <span class="navbar-text hidden-md-down">Jeweler Portal - Proto</span>
-  </div>
-
-  <hr class="mt-0">
-
-  <div class="user">
-    <div class="photo">
-      <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="" class="img-fluid rounded-circle">
+<div class="side-bar">
+  <!-- Title Row -->
+  <div class="container">
+    <div class="row py-3">
+      <span class="col-sm-12 hidden-lg-up">JP</span>
+      <span class="col-sm-12 hidden-md-down">Jeweler Portal - Proto</span>
     </div>
-    <div class="row info">
-      <div class="col-xs-12 text-xs-center">
-        <a class="btn profile-dropdown" (click)="isCollapsed = !isCollapsed">User Name <b class="fa fa-fw fa-caret-down"></b></a>
-        <div [ngbCollapse]="isCollapsed">
-          <ul class="nav nav-pills nav-stacked">
-            <li class="nav-item">
-              <a [routerLink]="['/profile']" routerLinkActive="active" routerLink="/profile" class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a [routerLink]="['/account']" routerLinkActive="active" class="nav-link">Account</a>
-            </li>
-            <li class="nav-item">
-              <a [routerLink]="['/settings']" routerLinkActive="active" class="nav-link">Settings</a>
-            </li>
-          </ul>
+
+    <hr class="mt-0">
+
+    <div class="user">
+      <div class="photo">
+        <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="" class="img-fluid rounded-circle">
+      </div>
+      <div class="row info">
+        <div class="col-sm-12 text-sm-center">
+          <a class="btn profile-dropdown" (click)="toggleTray()">User Name <b
+            class="fa fa-fw fa-caret-down"></b></a>
+          <div [@openTray]="state" *ngIf="state == 'open'">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a [routerLink]="['/profile']" routerLinkActive="active" routerLink="/profile"
+                   class="nav-link">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/account']" routerLinkActive="active" class="nav-link">Account</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/settings']" routerLinkActive="active" class="nav-link">Settings</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+    <hr>
+
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">
+          <i class="fa fa-fw fa-line-chart"></i>Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw fa-gift"></i>Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i
+          class="fa fa-fw fa-picture-o"></i>Resources</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/training']"><i
+          class="fa fa-fw fa-university"></i>Training</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/familytree']"><i
+          class="fa fa-fw fa-pagelines"></i>Family Tree</a>
+      </li>
+    </ul>
   </div>
-
-  <hr>
-
-  <ul class="nav nav-pills nav-stacked">
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">
-        <i class="fa fa-fw fa-line-chart"></i>Dashboard
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw fa-gift"></i>Events</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i class="fa fa-fw fa-picture-o"></i>Resources</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/training']"><i class="fa fa-fw fa-university"></i>Training</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="['/familytree']"><i class="fa fa-fw fa-pagelines"></i>Family Tree</a>
-    </li>
-  </ul>
 
 </div>
 

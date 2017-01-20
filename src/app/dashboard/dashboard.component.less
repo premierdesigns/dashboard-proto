@@ -1,0 +1,71 @@
+@import "../../pdi-colors";
+
+.card {
+  background-position: center center;
+  background-size: cover;
+
+  .card-img {
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    background: -moz-linear-gradient(top, @pdi-grey-compLight 0%, #000000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @pdi-grey-compLight), color-stop(100%, #000000));
+    background: -webkit-linear-gradient(top, @pdi-grey-compLight 0%, #000000 100%);
+    background: -o-linear-gradient(top, @pdi-grey-compLight 0%, #000000 100%);
+    background: -ms-linear-gradient(top, @pdi-grey-compLight 0%, #000000 100%);
+    background: linear-gradient(to bottom, @pdi-grey-compLight 0%, #000000 100%);
+    background-size: 125% 125%;
+    opacity: .75;
+  }
+}
+
+.info-box {
+  display: block;
+  min-height: 90px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  //margin-bottom: 15px;
+
+  .info-box-icon {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    background: rgba(0,0,0,0.2);
+
+    i {
+      color: #fff;
+      text-align: center;
+      font-size: 45px;
+    }
+  }
+
+  .info-box-content {
+    padding: 5px 10px;
+    margin-left: 90px;
+
+    .info-box-text {
+      display: block;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+
+    .info-box-number {
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+}

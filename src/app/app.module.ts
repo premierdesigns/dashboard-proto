@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
-import {ChartsModule} from 'ng2-charts/ng2-charts';
+import {ChartsModule} from 'ng2-charts';
 import {AgmCoreModule} from  'angular2-google-maps/core';
 
 import {AppComponent} from './app.component';
@@ -23,8 +23,6 @@ import {TrainingPageComponent} from './training-page/training-page.component';
 import {OrderService} from "./orders/order.service";
 import {ShowsService} from "./shows/shows.service";
 import {JewelerService} from "./jeweler-profile/jeweler.service";
-import {MarkdownModule} from 'angular2-markdown';
-import {PromoCarouselComponent} from './dashboard/promo-carousel/promo-carousel.component';
 import {BillingInfoComponent} from './jeweler-profile/billing-info/billing-info.component';
 import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-info.component';
 import {SidebarColorDirective} from './sidebar-color.directive';
@@ -42,12 +40,19 @@ import {ContractInfoComponent} from './jeweler-account/contract-info/contract-in
 import {PersonalWebpageComponent} from './jeweler-account/personal-webpage/personal-webpage.component';
 import {PersonalEcommerceComponent} from './jeweler-account/personal-ecommerce/personal-ecommerce.component';
 import {ContractInfoService} from "./jeweler-account/contract-info/contract-info.service";
-import {SqueezeBoxModule} from 'squeezebox';
 import {ActionIconsComponent} from './orders/action-icons/action-icons.component';
 import {OrderStatusDirective} from './orders/order-status.directive';
-import {PromotionsComponent} from './promotions/promotions.component';
-import {PromotionsService} from "./promotions/promotions-service.service";
-import { CommunicationsComponent } from './settings/communications/communications.component';
+import {CommunicationsComponent} from './settings/communications/communications.component';
+import {MobileSideBarComponent} from './mobile-side-bar/mobile-side-bar.component';
+import {CurrentMonthSalesComponent} from './dashboard/current-month-sales/current-month-sales.component';
+import {ShowsThisMonthComponent} from './events/shows-this-month/shows-this-month.component';
+import {MyFamilyComponent} from './family-tree/my-family/my-family.component';
+import {DataCardsComponent} from './family-tree/data-cards/data-cards.component';
+import {QuickActionIconsComponent} from './action-bar/quick-action-icons/quick-action-icons.component';
+import {OrdersStatsComponent} from './orders/orders-stats/orders-stats.component';
+import {CardIconsComponent} from './dashboard/card-icons/card-icons.component';
+import {AccordianComponent} from './orders/orders-accordion/accordian/accordian.component';
+import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/accordian-tab.component';
 
 
 @NgModule({
@@ -65,7 +70,6 @@ import { CommunicationsComponent } from './settings/communications/communication
     CreativeResourcesComponent,
     JewelerShowsComponent,
     TrainingPageComponent,
-    PromoCarouselComponent,
     BillingInfoComponent,
     ShippingInfoComponent,
     SidebarColorDirective,
@@ -80,8 +84,18 @@ import { CommunicationsComponent } from './settings/communications/communication
     PersonalEcommerceComponent,
     ActionIconsComponent,
     OrderStatusDirective,
-    PromotionsComponent,
-    CommunicationsComponent
+    CommunicationsComponent,
+    MobileSideBarComponent,
+    CurrentMonthSalesComponent,
+    ShowsThisMonthComponent,
+    MyFamilyComponent,
+    DataCardsComponent,
+    ActionIconsComponent,
+    QuickActionIconsComponent,
+    OrdersStatsComponent,
+    CardIconsComponent,
+    AccordianComponent,
+    AccordianTabComponent
   ],
   imports: [
     BrowserModule,
@@ -91,10 +105,8 @@ import { CommunicationsComponent } from './settings/communications/communication
     NgbModule.forRoot(),
     ChartsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
+      apiKey: 'AIzaSyAMgLxIhSj5lKlJrvXSz-HEqQ23HH1-cFo'
     }),
-    MarkdownModule,
-    SqueezeBoxModule
   ],
   providers: [
     OrderService,
@@ -106,8 +118,7 @@ import { CommunicationsComponent } from './settings/communications/communication
     StarWarsService,
     AccountService,
     SettingsService,
-    ContractInfoService,
-    PromotionsService
+    ContractInfoService
   ],
   bootstrap: [AppComponent]
 })

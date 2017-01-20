@@ -1,0 +1,7 @@
+<div>
+  <pd-accordian-tab *ngFor="let order of orders" [title]="order.firstName" (click)="toggle(order)" [extended]="isActive(order)" [id]="order.id" [order]="order">
+    <div class="col py-3">
+      {{order.id}} - {{order.firstName}} {{order.lastName}}
+    </div>
+  </pd-accordian-tab>
+</div>

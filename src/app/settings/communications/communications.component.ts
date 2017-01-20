@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+
+import { Jeweler } from '../../jeweler-profile/jeweler';
 
 @Component({
   selector: 'pd-communications',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./communications.component.less']
 })
 export class CommunicationsComponent implements OnInit {
+  @Input() jeweler: Jeweler;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

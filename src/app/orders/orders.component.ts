@@ -1,18 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Component, OnInit, trigger, state, style, transition, animate, Pipe, PipeTransform } from '@angular/core';
 
 import { Order } from './order';
 import { OrderService } from "./order.service";
-
-import { OrderStatusDirective } from './order-status.directive';
-import {count} from "rxjs/operator/count";
+import {} from './orders-accordion/accordian/accordian.component';
 
 @Component({
   selector: 'pd-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.less'],
-  providers: [OrderService]
+  providers: [OrderService],
+  animations: [
+    trigger('showProgress', [
+      state("in", style({
+        opacity: 1,
+        width: '*'
+      })),
+      transition(':enter', [
+        style({
+          opacity: 0,
+          width: '0'
+        }),
+        animate('2s 500ms ease-in-out')
+      ])
+    ])
+  ]
 })
+
 export class OrdersComponent implements OnInit {
   title = 'Orders';
   public isCollapsed = true;
@@ -23,6 +36,7 @@ export class OrdersComponent implements OnInit {
 
   getOrders(): void {
     this.orderService.getOrders().then(orders => this.orders = orders);
+    console.log(this.orders);
   }
 
   ngOnInit() {
@@ -40,10 +54,6 @@ export class OrdersComponent implements OnInit {
     else if (status === 'Submitted')
       return 'info';
   }
-
-  // typeCount(orderType): void {
-  //   return count
-  // }
 
   onSelect(order: Order): void {
     this.selectedOrder = order;

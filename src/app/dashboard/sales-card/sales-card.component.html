@@ -1,8 +1,22 @@
-<h4 class="card-title">Sales Year-to-Date</h4>
-<div style="display: block;">
-  <canvas baseChart [data]="doughnutChartData"
-          [labels]="doughnutChartLabels"
-          [colors]="chartColors"
-          [chartType]="chartType"
-          [options]="chartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        Sales Year-to-Date
+      </div>
+      <div class="col text-right">
+        <pd-card-icons></pd-card-icons>
+      </div>
+    </div>
+  </div>
+  <div class="card-block">
+    <div style="display: block;">
+      <canvas baseChart [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [colors]="chartColors"
+              [chartType]="chartType"
+              [options]="chartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
 </div>
+

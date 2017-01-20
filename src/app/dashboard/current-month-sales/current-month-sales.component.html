@@ -1,0 +1,31 @@
+<div class="card card-inverse card-primary">
+  <div class="card-block pb-0 text-white">
+    <div class="btn-group pull-right" dropdown="">
+      <button class="btn btn-transparent dropdown-toggle pa-0" dropdowntoggle="" type="button">
+        <i class="icon-settings"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" dropdownmenu="">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+    <h4 class="mb-0">9.823</h4>
+    <p class="mb-0">
+      current-month-sales works!
+    </p>
+  </div>
+  <div class="chart-wrapper px-1">
+    <div style="display: block;">
+      <canvas baseChart height="70" width="354"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>

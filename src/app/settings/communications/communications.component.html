@@ -1,7 +1,32 @@
-<p>
-  This will have settings related to the jewelers communication options.
-</p>
-<ul>
-  <li>What emails they receive</li>
-  <li>What is their primary email address</li>
-</ul>
+<form>
+
+  <!--Primary Email-->
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="form-group">
+        <label for="primaryEmail">Primary Email</label>
+        <input type="email" id="primaryEmail" placeholder="{{jeweler.email}}" class="form-control" aria-describedby="primaryEmailHelp">
+        <small id="primaryEmailHelp" class="form-text text-muted">This is the primary email address that Premier will contact you at.</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> 2
+        </label>
+      </div>
+      <div class="form-check form-check-inline disabled">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled> 3
+        </label>
+      </div>
+    </div>
+  </div>
+</form>

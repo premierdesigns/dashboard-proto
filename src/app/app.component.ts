@@ -13,12 +13,4 @@ export class AppComponent {
   constructor(private uiColors: UiColors) {
     this.theme = uiColors.getTheme();
   }
-
-  @ViewChild(SideBarComponent)sideNav:any;
-  private toggleNav:any;
-  ngAfterViewInit():any {
-    this.toggleNav=()=> {
-      this.sideNav.toggle();
-    }
-  }
 }

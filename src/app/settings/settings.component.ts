@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Subscription} from "rxjs";
+
+import { Jeweler } from '../jeweler-profile/jeweler';
+import { JewelerService } from '../jeweler-profile/jeweler.service';
 
 @Component({
   selector: 'pd-settings',
@@ -7,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
   title = "Settings";
+  jeweler: Jeweler;
 
-  constructor() { }
+  constructor(private jewelerService: JewelerService) { }
 
   ngOnInit() {
+    this.jeweler = this.jewelerService.getJeweler(0) || this.jewelerService.createEmptyJeweler();
   }
 
 }

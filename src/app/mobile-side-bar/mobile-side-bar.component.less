@@ -1,0 +1,26 @@
+@import "../../pdi-colors";
+
+@line-height: 40px;
+
+ul.nav li.nav-item {
+  height: @line-height;
+  line-height: @line-height;
+
+  a i {
+    margin-right: 16px;
+  }
+
+  a.nav-link {
+    padding: 0 16px;
+    line-height: @line-height;
+    color: @pdi-grey-compDark;
+  }
+
+  a.nav-link.active {
+    background-color: @pdi-grey-compLight;
+  }
+}
+
+.mobile-menu {
+  height: 100%;
+}

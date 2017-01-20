@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Resource } from './resource';
 import { ResourcesService } from './resources.service';
 import resource = http.resource;
+import * as http from "selenium-webdriver/http";
 
 @Component({
   selector: 'pd-creative-resources',

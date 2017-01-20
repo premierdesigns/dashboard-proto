@@ -1,50 +1,26 @@
-<nav class="bg-inverse navbar navbar-full navbar-dark">
-  <ul class="nav navbar-nav pull-left">
-    <li class="nav-item">
-      <a class="nav-link" (click)="openSideNav($event)">
-        <i class="fa fa-ellipsis-v fa-fw"></i>
-      </a>
-    </li>
-  </ul>
+<nav class="navbar navbar-toggleable-md navbar-light">
+  <a class="navbar-brand"><i class="icon-options-vertical"></i> </a>
 
-  <form class="form-inline pull-left">
+  <form class="form-inline my-2 my-lg-0">
+    <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
     <pd-action-bar-search></pd-action-bar-search>
   </form>
 
-  <ul class="nav navbar-nav pull-right hidden-sm-down">
-    <li class="nav-item" ngbDropdown>
-      <a class="nav-link" id="helpDropdown" ngbDropdownToggle>
-        <i class="fa fa-question-circle-o fa-fw"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="helpDropdown">
-        <h6 class="dropdown-header">Phone</h6>
-        <button class="dropdown-item">Support - 800.111.1234</button>
-        <h6 class="dropdown-header">Email</h6>
-        <button class="dropdown-item">help@premierdesigns.com</button>
-      </div>
-    </li>
+  <button class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <li class="nav-item" ngbDropdown>
-      <a class="nav-link" id="quickAdd" aria-haspopup="true" ngbDropdownToggle>
-        <i class="fa fa-plus-circle fa-fw"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="quickAdd">
-        <button class="dropdown-item">New Order</button>
-        <button class="dropdown-item">New Show</button>
-        <button class="dropdown-item">New Contact</button>
-      </div>
-    </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <pd-mobile-side-bar></pd-mobile-side-bar>
+  </div>
+  <div class="navbar-toggler-right">
+    <pd-quick-action-icons></pd-quick-action-icons>
+  </div>
 
-    <li class="nav-item" ngbDropdown>
-      <a class="nav-link" id="notificationsDropdown" aria-haspopup="true" ngbDropdownToggle>
-        <i class="fa fa-bell fa-fw"></i>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="helpDropdown">
-        <button class="dropdown-item">Action - 1</button>
-        <button class="dropdown-item">Another Action</button>
-        <button class="dropdown-item">Something else is here</button>
-      </div>
-    </li>
-
-  </ul>
 </nav>

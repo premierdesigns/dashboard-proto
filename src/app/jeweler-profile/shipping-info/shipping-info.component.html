@@ -1,34 +1,10 @@
 <div class="card-block">
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
 
-    <!--<div class="form-group row">-->
-      <!--<label for="firstName" class="col-xs-2 col-form-label text-xs-right">First Name</label>-->
-      <!--<div class="col-xs-10">-->
-        <!--<input type="text" class="form-control" id="firstName" aria-describedby="First Name"-->
-               <!--placeholder="{{jeweler.firstName}}">-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="form-group row">-->
-      <!--<label for="middleName" class="col-xs-2 col-form-label text-xs-right">Middle Name</label>-->
-      <!--<div class="col-xs-10">-->
-        <!--<input type="text" class="form-control" id="middleName" aria-describedby="Middle Name"-->
-               <!--placeholder="{{jeweler.middleName}}">-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="form-group row">-->
-      <!--<label for="lastName" class="col-xs-2 col-form-label text-xs-right">Last Name</label>-->
-      <!--<div class="col-xs-10">-->
-        <!--<input type="text" class="form-control" id="lastName" aria-describedby="Last Name"-->
-               <!--placeholder="{{jeweler.lastName}}">-->
-      <!--</div>-->
-    <!--</div>-->
-
     <div class="form-group row">
       <!-- EMAIL ADDRESS -->
-      <label for="exampleInputEmail1" class="col-xs-2 col-form-label text-xs-right">Email address</label>
-      <div class="col-xs-10">
+      <label for="exampleInputEmail1" class="col-sm-2 col-form-label text-sm-right">Email address</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                  placeholder="{{jeweler.email}}">
@@ -41,14 +17,14 @@
       </div>
     </div>
 
-    <div class="form-group row col-xs-10 offset-xs-2">
+    <div class="form-group row col-sm-10 offset-sm-2">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
 
     <div class="form-group row">
       <!-- PASSWORD -->
-      <label for="exampleInputPassword1" class="col-xs-2 col-form-label text-xs-right">Password</label>
-      <div class="col-xs-10">
+      <label for="exampleInputPassword1" class="col-sm-2 col-form-label text-sm-right">Password</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           <span class="input-group-btn">
@@ -62,8 +38,8 @@
 
     <div class="form-group row">
       <!-- SHIPPING ADDRESS -->
-      <label for="address1" class="col-xs-2 col-form-label text-xs-right">Street Address</label>
-      <div class="col-xs-10">
+      <label for="address1" class="col-sm-2 col-form-label text-sm-right">Street Address</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="address1" aria-describedby="Street Address" placeholder="{{jeweler.address1}}">
           <span class="input-group-btn">
@@ -77,8 +53,8 @@
 
     <div class="form-group row">
       <!-- ADDRESS ADDITIONAL INFO -->
-      <label for="address2" class="col-xs-2 col-form-label text-xs-right">Address (Cont.)</label>
-      <div class="col-xs-10">
+      <label for="address2" class="col-sm-2 col-form-label text-sm-right">Address (Cont.)</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="address2" aria-describedby="Address/Suite" [disabled]="!hasInfo(jeweler.address2)" placeholder="{{jeweler.address2}}">
           <span class="input-group-btn">
@@ -92,8 +68,8 @@
 
     <div class="form-group row">
       <!-- CITY -->
-      <label for="city" class="col-xs-2 col-form-label text-xs-right">City</label>
-      <div class="col-xs-10">
+      <label for="city" class="col-sm-2 col-form-label text-sm-right">City</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="city" aria-describedby="City" placeholder="{{jeweler.city}}">
           <span class="input-group-btn">
@@ -107,8 +83,8 @@
 
     <div class="form-group row">
       <!-- STATE -->
-      <label for="state" class="col-xs-2 col-form-label text-xs-right">State</label>
-      <div class="col-xs-10">
+      <label for="state" class="col-sm-2 col-form-label text-sm-right">State</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="state" aria-describedby="State" placeholder="{{jeweler.state}}">
           <span class="input-group-btn">
@@ -122,8 +98,8 @@
 
     <div class="form-group row">
       <!-- ZIP CODE -->
-      <label for="zipCode" class="col-xs-2 col-form-label text-xs-right">Postal Code</label>
-      <div class="col-xs-10">
+      <label for="zipCode" class="col-sm-2 col-form-label text-sm-right">Postal Code</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="zipCode" aria-describedby="Postal Code" placeholder="{{jeweler.zipCode}}">
           <span class="input-group-btn">
@@ -137,8 +113,8 @@
 
     <div class="form-group row">
       <!-- PHONE -->
-      <label for="primaryPhone" class="col-xs-2 col-form-label text-xs-right">Primary Phone</label>
-      <div class="col-xs-10">
+      <label for="primaryPhone" class="col-sm-2 col-form-label text-sm-right">Primary Phone</label>
+      <div class="col-sm-10">
         <div class="input-group">
           <input type="text" class="form-control" id="primaryPhone" aria-describedby="Primary Phone" placeholder="{{jeweler.phone}}">
           <span class="input-group-btn">

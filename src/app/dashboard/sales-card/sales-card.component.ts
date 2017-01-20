@@ -17,8 +17,8 @@ export class SalesCardComponent implements OnInit {
   public chartOptions:any = {
     animation: {
       animateRotate: true,
-      animateScale: true,
-      easing: 'easeInOutCubic'
+      animateScale: false,
+      easing: 'easeOutBounce'
     },
     legend: {
       display: true,
@@ -27,7 +27,7 @@ export class SalesCardComponent implements OnInit {
       fontColor: '#8a8c8d'
     },
     tooltips: {
-      bodyFontSize: 16
+      bodyFontSize: 12
     },
     circumference: 2*Math.PI,
     defaultFontSize: 24

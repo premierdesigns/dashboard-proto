@@ -1,8 +1,6 @@
 <div class="input-group">
-  <input type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
-  <span class="input-group-btn">
-  <button class="btn btn-secondary" type="button">
-  <i class="fa fa-search"></i>
-  </button>
+  <span class="input-group-addon">
+    <i class="icon-magnifier" id="universalAddon"></i>
   </span>
+  <input id="universalSearchField" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" ria-describedby="universalAddon" />
 </div>

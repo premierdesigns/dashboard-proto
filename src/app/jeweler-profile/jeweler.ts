@@ -11,7 +11,8 @@ export class Jeweler {
               public startDate?: string,
               public anniversaryDate?: string,
               public id?: number,
-              public address2?: string) {
+              public address2?: string,
+              public profilePicture?: string) {
   }
 
 }
