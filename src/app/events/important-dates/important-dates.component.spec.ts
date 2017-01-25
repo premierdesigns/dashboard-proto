@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AccordianComponent } from './accordian.component';
+import { ImportantDatesComponent } from './important-dates.component';
 
-describe('AccordianComponent', () => {
-  let component: AccordianComponent;
-  let fixture: ComponentFixture<AccordianComponent>;
+describe('ImportantDatesComponent', () => {
+  let component: ImportantDatesComponent;
+  let fixture: ComponentFixture<ImportantDatesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordianComponent ]
+      declarations: [ ImportantDatesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccordianComponent);
+    fixture = TestBed.createComponent(ImportantDatesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

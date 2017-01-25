@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { FamilyTreeComponent } from './family-tree.component';
+import { NearYouComponent } from './near-you.component';
 
-describe('FamilyTreeComponent', () => {
-  let component: FamilyTreeComponent;
-  let fixture: ComponentFixture<FamilyTreeComponent>;
+describe('NearYouComponent', () => {
+  let component: NearYouComponent;
+  let fixture: ComponentFixture<NearYouComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FamilyTreeComponent ]
+      declarations: [ NearYouComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FamilyTreeComponent);
+    fixture = TestBed.createComponent(NearYouComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

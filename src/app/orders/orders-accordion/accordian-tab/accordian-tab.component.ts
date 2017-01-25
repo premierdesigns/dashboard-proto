@@ -27,6 +27,7 @@ import {Component,
   ]
 })
 export class AccordianTabComponent implements OnInit {
+  jewelerName: string = 'User Name';
   @Input() title;
   @Input() extended;
   @Input() order;

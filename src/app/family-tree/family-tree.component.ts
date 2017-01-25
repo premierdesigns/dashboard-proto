@@ -19,12 +19,14 @@ export class FamilyTreeComponent implements OnInit {
 
   public downlinePeople: any;
   public firstLevel: any;
+  public secondLevel: any;
 
   constructor( public downline: DownlineService) { }
 
   ngOnInit() {
     this.loadDownline();
     this.getFirstLevel();
+    this.getSecondLevel();
   }
 
   loadDownline() {
@@ -38,6 +40,13 @@ export class FamilyTreeComponent implements OnInit {
     this.downline.loadFirstLevel().then(data => {
       this.firstLevel = data;
       console.log(this.firstLevel);
+    });
+  }
+
+  getSecondLevel() {
+    this.downline.loadSecondLevel().then(data => {
+      this.secondLevel = data;
+      console.log(this.secondLevel);
     });
   }
 

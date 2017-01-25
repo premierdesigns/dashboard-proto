@@ -1,32 +1,33 @@
 <div class="row mt-1">
-  <div class="col">
+  <div class="col" (click)="changeOrderFilter('Event')">
     <div class="info-box">
       <span class="info-box-icon bg-pdiGreen">
         <i class="icon-event"></i>
       </span>
       <div class="info-box-content">
-        <span class="info-box-text">Orders from Events</span>
+        <span class="info-box-text">Event Orders</span>
         <p class="info-box-number">15</p>
       </div>
     </div>
   </div>
 
-  <div class="col">
+  <div class="col" (click)="changeOrderFilter('Individual')">
     <div class="info-box">
       <span class="info-box-icon bg-pdiPink">
-        <i class="icon-mustache"></i>
+        <i class="icon-user-female"></i>
       </span>
       <div class="info-box-content">
-        <span class="info-box-text">Individual/Web Orders</span>
+        <!--<span class="info-box-text">Individual/Web Orders</span>-->
+        <span class="info-box-text">Customer Orders</span>
         <p class="info-box-number">100</p>
       </div>
     </div>
   </div>
 
-  <div class="col">
+  <div class="col" (click)="changeOrderFilter('Personal')">
     <div class="info-box">
       <span class="info-box-icon bg-pdiBlue">
-        <i class="icon-user-female"></i>
+        <i class="icon-briefcase"></i>
       </span>
       <div class="info-box-content">
         <span class="info-box-text">Personal Orders</span>

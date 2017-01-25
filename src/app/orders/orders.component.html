@@ -1,44 +1,56 @@
-<pd-orders-stats></pd-orders-stats>
+<pd-orders-stats [currentFilter]="orderFilterString" (changeFilterString)="changeOrderFilter($event)"></pd-orders-stats>
 
 <div class="card">
   <div class="card-header">
-    <div class="row order-header">
+    <div class="row">
+
       <!-- Order Type Header -->
-      <div class="col text-center">
-        <span class="hidden-md-down">{{title}} </span><i class="icon-people small"></i>
-      </div>
-      <!-- Customer Info Header -->
-      <div class="col text-center">
+      <div class="col">
         <!--show on larger screens-->
-        <span class="hidden-md-down">Customer Info.</span>
+        <span class="hidden-md-down">Order Info <i class="fa fa-fw fa-sort px-2 text-muted"></i></span>
         <!--for mobile screens-->
-        <span class="hidden-lg-up"><i class="fa fa-address-card-o"></i></span>
+        <span class="hidden-lg-up"><i class="icon-organization"></i></span>
       </div>
+
+      <!--&lt;!&ndash; Customer Info Header &ndash;&gt;-->
+      <!--<div class="col text-center">-->
+        <!--&lt;!&ndash;show on larger screens&ndash;&gt;-->
+        <!--<span class="hidden-md-down">Customer Info.</span>-->
+        <!--&lt;!&ndash;for mobile screens&ndash;&gt;-->
+        <!--<span class="hidden-lg-up"><i class="fa fa-address-card-o"></i></span>-->
+      <!--</div>-->
+
       <!-- Date Header -->
       <div class="col text-center">
         <!--show on larger screens-->
-        <span class="hidden-md-down">Date</span>
+        <span class="hidden-md-down">Date <i class="fa fa-fw fa-sort px-2"></i></span>
         <!--for mobile screens-->
-        <span class="hidden-lg-up"><i class="fa fa-calendar-o"></i></span>
+        <span class="hidden-lg-up"><i class="icon-calendar"></i></span>
       </div>
+
       <!-- Order Status Header -->
       <div class="col text-center">
         <!--show on larger screens-->
-        <span class="hidden-md-down">Status</span>
+        <span class="hidden-md-down">Status <i class="fa fa-fw fa-sort px-2"></i></span>
         <!--for mobile screens-->
         <span class="hidden-lg-up"><i class="icon-location-pin"></i></span>
       </div>
+
       <!-- Payment Info Header -->
       <div class="col text-center">
         <!--show on larger screens-->
-        <span class="hidden-md-down">Payment Method</span>
+        <span class="hidden-md-down">Payment Method <i class="fa fa-fw fa-sort px-2"></i></span>
         <!--for mobile screens-->
         <span class="hidden-lg-up"><i class="icon-wallet"></i></span>
       </div>
-      <div class="col hidden-md-down">&nbsp;</div>
+
+      <!--Action Icons Column Header -->
+      <div class="col hidden-md-down text-muted text-right small">&nbsp;
+        Actions
+      </div>
     </div>
   </div>
-  <pd-accordian [orders]="orders"></pd-accordian>
+  <pd-accordian [orders]="orders" [filterOrders]="orderFilterString"></pd-accordian>
 </div>
 
 <!--<div class="card">-->

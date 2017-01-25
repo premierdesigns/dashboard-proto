@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventTimelineComponent } from './event-timeline/event-timeline.component';
 
 @Component({
   selector: 'pd-events',

@@ -1,8 +1,12 @@
-import { Component, OnInit, trigger, state, style, transition, animate, Pipe, PipeTransform } from '@angular/core';
+import {
+  Component, OnInit, trigger, state, style, transition, animate, Pipe, PipeTransform,
+  ViewChild
+} from '@angular/core';
 
 import { Order } from './order';
 import { OrderService } from "./order.service";
-import {} from './orders-accordion/accordian/accordian.component';
+import { AccordianComponent } from './orders-accordion/accordian/accordian.component';
+import { OrdersStatsComponent } from './orders-stats/orders-stats.component';
 
 @Component({
   selector: 'pd-orders',
@@ -27,10 +31,18 @@ import {} from './orders-accordion/accordian/accordian.component';
 })
 
 export class OrdersComponent implements OnInit {
+  @ViewChild(OrdersStatsComponent)
   title = 'Orders';
   public isCollapsed = true;
   orders: Order[];
   selectedOrder: Order;
+
+  orderFilterString: string;
+
+  changeOrderFilter(changeTo: string) {
+    console.log(changeTo);
+    this.orderFilterString = changeTo;
+  }
 
   constructor(private orderService: OrderService ) { }
 

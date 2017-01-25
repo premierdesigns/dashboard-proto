@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">PREMIER DESIGNS IMPORTANT DATES</div>
+  <div class="card-block">
+    <ul class="list-unstyled">
+      <li class="media" *ngFor="let date of dates">
+        <div class="media-body">
+          <h5>{{date.month}} {{date.date}}</h5>
+          {{date.title}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -27,6 +27,8 @@ export class MyFamilyComponent implements OnInit {
   @Input() jeweler: Jeweler;
   @Input('downlinePeople') downlinePeople: any;
   @Input('firstLevel') firstLevel: any;
+  @Input('secondLevel') secondLevel: any;
+
   constructor() { }
 
   ngOnInit() {

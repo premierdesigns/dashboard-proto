@@ -53,7 +53,11 @@ import {OrdersStatsComponent} from './orders/orders-stats/orders-stats.component
 import {CardIconsComponent} from './dashboard/card-icons/card-icons.component';
 import {AccordianComponent} from './orders/orders-accordion/accordian/accordian.component';
 import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/accordian-tab.component';
-
+import { EventTimelineComponent } from './events/event-timeline/event-timeline.component';
+import {UpcomingEventsComponent} from "./events/upcoming-events/upcoming-events.component";
+import {NearYouComponent} from "./events/near-you/near-you.component";
+import {ImportantDatesComponent} from "./events/important-dates/important-dates.component";
+import { OrderFilterPipe } from './orders/order-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -95,7 +99,12 @@ import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/acc
     OrdersStatsComponent,
     CardIconsComponent,
     AccordianComponent,
-    AccordianTabComponent
+    AccordianTabComponent,
+    EventTimelineComponent,
+    UpcomingEventsComponent,
+    NearYouComponent,
+    ImportantDatesComponent,
+    OrderFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -106,7 +115,7 @@ import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/acc
     ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAMgLxIhSj5lKlJrvXSz-HEqQ23HH1-cFo'
-    }),
+    })
   ],
   providers: [
     OrderService,

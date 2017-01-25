@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'pd-orders-stats',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders-stats.component.less']
 })
 export class OrdersStatsComponent implements OnInit {
+  @Input() currentFilter: string;
+  @Output() changeFilterString = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeOrderFilter(changeTo: string) {
+    console.log(changeTo);
+    this.changeFilterString.emit(changeTo);
   }
 
 }

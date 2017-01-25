@@ -1,6 +1,37 @@
-<h6>jeweler level</h6>
+<div class="jumbotron">
+  <div class="row text-muted">
+    <div class="col-3 text-center">
+      <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="" class="img-fluid rounded-circle userPhoto">
+    </div>
+    <div class="col-9">
+      <h5>Jeweler Name</h5>
+      <p class="text-uppercase">Diamond</p>
+      <div class="row">
+        <div class="col-12">
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%; height: 2px;" aria-valuenow="25"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="text-uppercase text-muted">Progress to next level</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 75%; height: 2px;" aria-valuenow="25"
+                 aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="text-uppercase text-muted">Progress to maintain</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h6>Child Level</h6>
+<div class="row col py-3">
+  <h6 class="text-uppercase">Child Level</h6>
+</div>
+
 <div class="row family-row justify-content-around mb-3">
   <div *ngFor="let person of firstLevel" class="individual" [@createBubble]>
     <!--<span class="name">{{person.name.first}} {{person.name.last}}</span>-->
@@ -8,11 +39,22 @@
   </div>
 </div>
 
-<h6>Grandchild Level</h6>
-<div class="row justify-content-around mb-3">
-  <p *ngFor="let person of downlinePeople" class="p-1">
+<div class="row col py-3">
+  <h6 class="text-uppercase">Grand Child Level</h6>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <p *ngFor="let person of downlinePeople" class="m-3 p-3">
     <img class="rounded-circle img-fluid" src="{{person.picture.medium}}">
   </p>
 </div>
 
-<h6>Great Grandchildren Level</h6>
+<div class="row col py-3">
+  <h6 class="text-uppercase">Great Grand Child Level</h6>
+</div>
+
+<div class="row justify-content-center">
+  <span *ngFor="let person of secondLevel" class="m-2 p-2">
+    <img class="rounded-circle img-fluid" src="{{person.picture.thumbnail}}">
+  </span>
+</div>

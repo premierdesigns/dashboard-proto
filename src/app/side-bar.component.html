@@ -1,9 +1,12 @@
 <div class="side-bar">
   <!-- Title Row -->
   <div class="container">
-    <div class="row py-3">
-      <span class="col-sm-12 hidden-lg-up">JP</span>
-      <span class="col-sm-12 hidden-md-down">Jeweler Portal - Proto</span>
+    <div class="row p-3 text-center">
+      <div class="col">
+        <img src="../assets/images/Logo-Stacked-white.png" class="img-fluid" style="width: 50%; height: auto;">
+      </div>
+      <!--<span class="col-sm-12 hidden-lg-up">JP</span>-->
+      <!--<span class="col-sm-12 hidden-md-down">Jeweler Portal <small>Proto</small></span>-->
     </div>
 
     <hr class="mt-0">
@@ -14,8 +17,7 @@
       </div>
       <div class="row info">
         <div class="col-sm-12 text-sm-center">
-          <a class="btn profile-dropdown" (click)="toggleTray()">User Name <b
-            class="fa fa-fw fa-caret-down"></b></a>
+          <a class="btn profile-dropdown" (click)="toggleTray()">User Name <i class="fa fa-fw icon-arrow-down small"></i></a>
           <div [@openTray]="state" *ngIf="state == 'open'">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -39,14 +41,14 @@
     <ul class="nav nav-pills flex-column">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">
-          <i class="fa fa-fw fa-line-chart"></i>Dashboard
+          <i class="fa fa-fw icon-graph"></i>Dashboard
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw fa-gift"></i>Events</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw icon-event"></i>Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i
