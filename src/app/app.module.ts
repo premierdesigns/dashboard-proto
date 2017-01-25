@@ -43,10 +43,6 @@ import {PersonalEcommerceComponent} from './jeweler-account/personal-ecommerce/p
 import {ContractInfoService} from "./jeweler-account/contract-info/contract-info.service";
 import {ActionIconsComponent} from './orders/action-icons/action-icons.component';
 import {OrderStatusDirective} from './orders/order-status.directive';
-import {PromotionsComponent} from './promotions/promotions.component';
-import {PromotionsService} from "./promotions/promotions-service.service";
-import { CommunicationsComponent } from './settings/communications/communications.component';
-import {CommunicationsComponent} from './settings/communications/communications.component';
 import {MobileSideBarComponent} from './mobile-side-bar/mobile-side-bar.component';
 import {CurrentMonthSalesComponent} from './dashboard/current-month-sales/current-month-sales.component';
 import {ShowsThisMonthComponent} from './events/shows-this-month/shows-this-month.component';
@@ -62,10 +58,7 @@ import {UpcomingEventsComponent} from "./events/upcoming-events/upcoming-events.
 import {NearYouComponent} from "./events/near-you/near-you.component";
 import {ImportantDatesComponent} from "./events/important-dates/important-dates.component";
 import { OrderFilterPipe } from './orders/order-filter.pipe';
-import {PromotionsComponent} from './promotions/promotions.component';
-import {PromotionsService} from "./promotions/promotions-service.service";
-import { CommunicationsComponent } from './settings/communications/communications.component';
-import {MockBackend} from "@angular/http/testing";
+import {CommunicationsComponent} from "./settings/communications/communications.component";
 
 @NgModule({
   declarations: [
@@ -96,7 +89,6 @@ import {MockBackend} from "@angular/http/testing";
     PersonalEcommerceComponent,
     ActionIconsComponent,
     OrderStatusDirective,
-    CommunicationsComponent,
     MobileSideBarComponent,
     CurrentMonthSalesComponent,
     ShowsThisMonthComponent,
@@ -112,7 +104,8 @@ import {MockBackend} from "@angular/http/testing";
     UpcomingEventsComponent,
     NearYouComponent,
     ImportantDatesComponent,
-    OrderFilterPipe
+    OrderFilterPipe,
+    CommunicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -135,15 +128,13 @@ import {MockBackend} from "@angular/http/testing";
     StarWarsService,
     AccountService,
     SettingsService,
-    ContractInfoService,
-    PromotionsService,
-    BaseRequestOptions,
-    MockBackend,
-    {
-      provide: Http,
-      deps: [MockBackend, BaseRequestOptions],
-      useFactory: (backend, options) => { return new Http(backend, options); }
-    }
+    // ContractInfoService,
+    // BaseRequestOptions,
+    // {
+    //   provide: Http,
+    //   deps: [BaseRequestOptions],
+    //   useFactory: (backend, options) => { return new Http(backend, options); }
+    // }
   ],
   bootstrap: [AppComponent]
 })
