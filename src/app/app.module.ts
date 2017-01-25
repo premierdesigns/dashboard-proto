@@ -1,7 +1,7 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpModule, BaseRequestOptions, Http} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import {ChartsModule} from 'ng2-charts';
@@ -23,6 +23,7 @@ import {TrainingPageComponent} from './training-page/training-page.component';
 import {OrderService} from "./orders/order.service";
 import {ShowsService} from "./shows/shows.service";
 import {JewelerService} from "./jeweler-profile/jeweler.service";
+
 import {BillingInfoComponent} from './jeweler-profile/billing-info/billing-info.component';
 import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-info.component';
 import {SidebarColorDirective} from './sidebar-color.directive';
@@ -42,6 +43,9 @@ import {PersonalEcommerceComponent} from './jeweler-account/personal-ecommerce/p
 import {ContractInfoService} from "./jeweler-account/contract-info/contract-info.service";
 import {ActionIconsComponent} from './orders/action-icons/action-icons.component';
 import {OrderStatusDirective} from './orders/order-status.directive';
+import {PromotionsComponent} from './promotions/promotions.component';
+import {PromotionsService} from "./promotions/promotions-service.service";
+import { CommunicationsComponent } from './settings/communications/communications.component';
 import {CommunicationsComponent} from './settings/communications/communications.component';
 import {MobileSideBarComponent} from './mobile-side-bar/mobile-side-bar.component';
 import {CurrentMonthSalesComponent} from './dashboard/current-month-sales/current-month-sales.component';
@@ -58,6 +62,10 @@ import {UpcomingEventsComponent} from "./events/upcoming-events/upcoming-events.
 import {NearYouComponent} from "./events/near-you/near-you.component";
 import {ImportantDatesComponent} from "./events/important-dates/important-dates.component";
 import { OrderFilterPipe } from './orders/order-filter.pipe';
+import {PromotionsComponent} from './promotions/promotions.component';
+import {PromotionsService} from "./promotions/promotions-service.service";
+import { CommunicationsComponent } from './settings/communications/communications.component';
+import {MockBackend} from "@angular/http/testing";
 
 @NgModule({
   declarations: [
@@ -114,7 +122,7 @@ import { OrderFilterPipe } from './orders/order-filter.pipe';
     NgbModule.forRoot(),
     ChartsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAMgLxIhSj5lKlJrvXSz-HEqQ23HH1-cFo'
+      apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
     })
   ],
   providers: [
@@ -127,7 +135,15 @@ import { OrderFilterPipe } from './orders/order-filter.pipe';
     StarWarsService,
     AccountService,
     SettingsService,
-    ContractInfoService
+    ContractInfoService,
+    PromotionsService,
+    BaseRequestOptions,
+    MockBackend,
+    {
+      provide: Http,
+      deps: [MockBackend, BaseRequestOptions],
+      useFactory: (backend, options) => { return new Http(backend, options); }
+    }
   ],
   bootstrap: [AppComponent]
 })
