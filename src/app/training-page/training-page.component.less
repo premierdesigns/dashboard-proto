@@ -1,0 +1,24 @@
+@import "../../pdi-colors";
+
+a.nav-link:not(.active) {
+  color: @pdi-grey !important;
+
+  span.link-text {
+    display: none;
+  }
+
+  &:hover {
+    color: @pdi-purple-compDark !important;
+  }
+}
+
+a.active {
+  color: #ffffff;
+  background-color: @pdi-purple !important;
+  overflow-wrap: break-word;
+  overflow: hidden;
+
+  span.link-text {
+    visibility: visible;
+  }
+}

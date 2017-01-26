@@ -7,16 +7,23 @@ import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 })
 export class OrdersStatsComponent implements OnInit {
   @Input() currentFilter: string;
+  @Input() orders;
   @Output() changeFilterString = new EventEmitter<any>();
+
+  orderCount: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.countOrders();
   }
 
   changeOrderFilter(changeTo: string) {
     console.log(changeTo);
     this.changeFilterString.emit(changeTo);
+  }
+
+  countOrders() {
   }
 
 }

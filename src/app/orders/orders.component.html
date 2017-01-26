@@ -1,4 +1,4 @@
-<pd-orders-stats [currentFilter]="orderFilterString" (changeFilterString)="changeOrderFilter($event)"></pd-orders-stats>
+<pd-orders-stats [orders]="orders" [currentFilter]="orderFilterString" (changeFilterString)="changeOrderFilter($event)"></pd-orders-stats>
 
 <div class="card">
   <div class="card-header">
@@ -11,14 +11,6 @@
         <!--for mobile screens-->
         <span class="hidden-lg-up"><i class="icon-organization"></i></span>
       </div>
-
-      <!--&lt;!&ndash; Customer Info Header &ndash;&gt;-->
-      <!--<div class="col text-center">-->
-        <!--&lt;!&ndash;show on larger screens&ndash;&gt;-->
-        <!--<span class="hidden-md-down">Customer Info.</span>-->
-        <!--&lt;!&ndash;for mobile screens&ndash;&gt;-->
-        <!--<span class="hidden-lg-up"><i class="fa fa-address-card-o"></i></span>-->
-      <!--</div>-->
 
       <!-- Date Header -->
       <div class="col text-center">
@@ -48,112 +40,11 @@
       <div class="col hidden-md-down text-muted text-right small">&nbsp;
         Actions
       </div>
+
     </div>
   </div>
   <pd-accordian [orders]="orders" [filterOrders]="orderFilterString"></pd-accordian>
 </div>
-
-<!--<div class="card">-->
-
-  <!--<div>-->
-
-    <!--&lt;!&ndash;"Body" Row&ndash;&gt;-->
-    <!--<div *ngFor="let order of orders" [ngSwitch]="order.orderType">-->
-      <!--<div class="row py-3 align-items-center order-row mx-0">-->
-
-        <!--<div class="col text-center">-->
-          <!--<span *ngSwitchCase="'Personal'">-->
-            <!--<i class="icon-user-female"></i>-->
-          <!--</span>-->
-          <!--<span *ngSwitchCase="'Event'">-->
-            <!--<i class="icon-event pl-3"></i>-->
-            <!--<i class="icon-arrow-down small text-muted pull-right mr-1" style="margin-top: .35em;"></i>-->
-          <!--</span>-->
-          <!--<span *ngSwitchCase="'Individual'">-->
-            <!--<i class="icon-mustache"></i>-->
-          <!--</span>-->
-          <!--<span *ngSwitchCase="'Online'">-->
-            <!--<i class="icon-basket-loaded"></i>-->
-          <!--</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Customer Information &ndash;&gt;-->
-        <!--<div class="col text-center">-->
-          <!--<span class="d-block">-->
-            <!--<span class="hidden-sm-down">{{order.firstName}} {{order.lastName}}</span>-->
-            <!--<span class="hidden-md-up small">{{order.lastName}}</span>-->
-          <!--</span>-->
-          <!--<span class="text-muted small d-block hidden-sm-down">{{order.ordAddresses}}</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Order Date &ndash;&gt;-->
-        <!--<div class="col text-center">-->
-          <!--<span class="hidden-sm-down">{{order.orderDate}}</span>-->
-          <!--<span class="hidden-lg-up small">{{order.orderDate}}</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Order Status&ndash;&gt;-->
-        <!--<div class="col" [ngSwitch]="order.orderStatus">-->
-
-          <!--<h6 *ngSwitchCase="'Shipped'" class="text-success mb-0 small">{{order.orderStatus}} <span class="d-block text-muted small">{{order.shippingMethod}}</span></h6>-->
-          <!--<h6 *ngSwitchCase="'Processing'" class="text-warning mb-0">{{order.orderStatus}}</h6>-->
-          <!--<h6 *ngSwitchCase="'Errors'" class="text-danger mb-0">{{order.orderStatus}}</h6>-->
-          <!--<h6 *ngSwitchCase="'Submitted'" class="text-info mb-0">{{order.orderStatus}}</h6>-->
-          <!--<h6 *ngSwitchCase="'Open'" class="text-muted mb-0">{{order.orderStatus}}</h6>-->
-
-          <!--&lt;!&ndash;<div class="progress">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div *ngSwitchCase="'Shipped'" class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div *ngSwitchCase="'Processing'" class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div *ngSwitchCase="'Errors'" class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div *ngSwitchCase="'Submitted'" class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div *ngSwitchCase="'Open'" class="progress-bar" role="progressbar" [ngStyle]="{'height': '1px'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>&ndash;&gt;-->
-          <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Order Payment Type &ndash;&gt;-->
-        <!--<div class="col">-->
-          <!--<span class="d-block">{{order.paymentTypes}}</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Action Icons for larger displays &ndash;&gt;-->
-        <!--<div class="col hidden-md-down">-->
-          <!--<pd-action-icons></pd-action-icons>-->
-        <!--</div>-->
-
-      <!--</div>-->
-
-      <!--&lt;!&ndash; Action Icons for smaller displays&ndash;&gt;-->
-      <!--<div class="row mx-0 hidden-lg-up my-2">-->
-        <!--<div class="col">-->
-          <!--<pd-action-icons></pd-action-icons>-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--&lt;!&ndash;Bottom progress border.&ndash;&gt;-->
-      <!--<div class="row">-->
-        <!--<div class="col-12">-->
-          <!--<div class="progress" [ngSwitch]="order.orderStatus">-->
-            <!--<div [@showProgress] *ngSwitchCase="'Shipped'" class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
-            <!--<div [@showProgress] *ngSwitchCase="'Processing'" class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
-            <!--<div [@showProgress] *ngSwitchCase="'Errors'" class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
-            <!--<div [@showProgress] *ngSwitchCase="'Submitted'" class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': order.progress + '%', 'height': '1px'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
-            <!--<div [@showProgress] *ngSwitchCase="'Open'" class="progress-bar" role="progressbar" [ngStyle]="{'width': '0%' ,'height': '1px'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
-
-      <!--&lt;!&ndash; Extra row for Event Orders &ndash;&gt;-->
-      <!--<div *ngSwitchCase="'Event'" class="row bg-faded p-2 mx-0">-->
-        <!--<div class="col">-->
-          <!--<span class="text-muted">Event row for orders from that event.</span>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-  <!--</div>-->
-<!--</div>-->
 
 <hr>
 

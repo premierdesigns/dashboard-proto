@@ -1,7 +1,7 @@
 <div class="row mt-1">
-  <div class="col" (click)="changeOrderFilter('Event')">
+  <div class="col">
     <div class="info-box">
-      <span class="info-box-icon bg-pdiGreen">
+      <span class="info-box-icon bg-pdiGreen" (click)="changeOrderFilter('Event')">
         <i class="icon-event"></i>
       </span>
       <div class="info-box-content">
@@ -11,9 +11,9 @@
     </div>
   </div>
 
-  <div class="col" (click)="changeOrderFilter('Individual')">
+  <div class="col">
     <div class="info-box">
-      <span class="info-box-icon bg-pdiPink">
+      <span class="info-box-icon bg-pdiPink" (click)="changeOrderFilter('Individual')">
         <i class="icon-user-female"></i>
       </span>
       <div class="info-box-content">
@@ -24,9 +24,9 @@
     </div>
   </div>
 
-  <div class="col" (click)="changeOrderFilter('Personal')">
+  <div class="col">
     <div class="info-box">
-      <span class="info-box-icon bg-pdiBlue">
+      <span class="info-box-icon bg-pdiBlue" (click)="changeOrderFilter('Personal')">
         <i class="icon-briefcase"></i>
       </span>
       <div class="info-box-content">
@@ -34,7 +34,9 @@
         <p class="info-box-number">5</p>
       </div>
     </div>
+
   </div>
 
-
-</div>
+  <div class="col-2" *ngIf="currentFilter">
+    <a class="btn btn-link text-uppercase align-bottom small" (click)="changeOrderFilter('')"><i class="fa fa-fw fa-close"></i> Clear Filter</a>
+  </div>

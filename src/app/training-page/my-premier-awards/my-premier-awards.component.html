@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+  <li *ngFor="let video of videos" class="media mb-4">
+    <img src="{{video.previewImage}}" class="d-flex mr-3" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{video.title}}</h5>
+      <p>{{video.summary}}</p>
+    </div>
+  </li>
+</ul>

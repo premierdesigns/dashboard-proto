@@ -53,12 +53,19 @@ import {OrdersStatsComponent} from './orders/orders-stats/orders-stats.component
 import {CardIconsComponent} from './dashboard/card-icons/card-icons.component';
 import {AccordianComponent} from './orders/orders-accordion/accordian/accordian.component';
 import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/accordian-tab.component';
-import { EventTimelineComponent } from './events/event-timeline/event-timeline.component';
-import {UpcomingEventsComponent} from "./events/upcoming-events/upcoming-events.component";
-import {NearYouComponent} from "./events/near-you/near-you.component";
-import {ImportantDatesComponent} from "./events/important-dates/important-dates.component";
 import { OrderFilterPipe } from './orders/order-filter.pipe';
 import {CommunicationsComponent} from "./settings/communications/communications.component";
+import {EventCalendarComponent} from "./events/event-calendar/event-calendar.component";
+import { CalendarModule } from 'angular-calendar';
+import {BookingComponent} from "./training-page/booking/booking.component";
+import {InspirationComponent} from "./training-page/inspiration/inspiration.component";
+import {JewelryShowBasicsComponent} from "./training-page/jewelry-show-basics/jewelry-show-basics.component";
+import {MarketingToolsComponent} from "./training-page/marketing-tools/marketing-tools.component";
+import {MyPremierAwardsComponent} from "./training-page/my-premier-awards/my-premier-awards.component";
+import {PremierLifeComponent} from "./training-page/premier-life/premier-life.component";
+import {ProductVersatilityComponent} from "./training-page/product-versatility/product-versatility.component";
+import {RetailingComponent} from "./training-page/retailing/retailing.component";
+import {SponsoringComponent} from "./training-page/sponsoring/sponsoring.component";
 
 @NgModule({
   declarations: [
@@ -100,12 +107,18 @@ import {CommunicationsComponent} from "./settings/communications/communications.
     CardIconsComponent,
     AccordianComponent,
     AccordianTabComponent,
-    EventTimelineComponent,
-    UpcomingEventsComponent,
-    NearYouComponent,
-    ImportantDatesComponent,
     OrderFilterPipe,
-    CommunicationsComponent
+    CommunicationsComponent,
+    EventCalendarComponent,
+    BookingComponent,
+    InspirationComponent,
+    JewelryShowBasicsComponent,
+    MarketingToolsComponent,
+    MyPremierAwardsComponent,
+    PremierLifeComponent,
+    ProductVersatilityComponent,
+    RetailingComponent,
+    SponsoringComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +129,8 @@ import {CommunicationsComponent} from "./settings/communications/communications.
     ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
-    })
+    }),
+    CalendarModule.forRoot()
   ],
   providers: [
     OrderService,
