@@ -2,10 +2,13 @@
 
 <div class="row mb-3">
   <ul class="nav nav-pills nav-justified col">
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" role="tab">ALL</a>
+    </li>
     <li *ngFor="let section of trainingSections" class="nav-item" placement="top" ngbTooltip="{{section.title}}">
       <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" href="{{'#' + section.ref}}" role="tab">
         <i [ngClass]="section.icon"></i>
-        <span class="link-text pl-2">{{section.title}}</span>
+        <!--<span class="link-text pl-2">{{section.title}}</span>-->
       </a>
     </li>
   </ul>
