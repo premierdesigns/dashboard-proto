@@ -1,6 +1,9 @@
-<div class="input-group">
+<form class="form-inline my-2 my-lg-0">
+  <div class="input-group">
   <span class="input-group-addon">
     <i class="icon-magnifier" id="universalAddon"></i>
   </span>
-  <input id="universalSearchField" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" ria-describedby="universalAddon" />
-</div>
+    <input id="universalSearchField" type="text" class="form-control"
+           placeholder="Search" aria-describedby="universalAddon"/>
+  </div>
+</form>

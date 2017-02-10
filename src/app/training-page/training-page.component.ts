@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./training-page.component.less']
 })
 export class TrainingPageComponent implements OnInit {
+  public isCollapsed = true;
+
   public trainingSections: Array<any> = [
     {
       "title": "Regional Rally 2017",
@@ -15,7 +17,7 @@ export class TrainingPageComponent implements OnInit {
     {
       "title": "Jewelry Show Basics",
       "ref": "JewelryShowBasics",
-      "icon": "ifa fa-television"
+      "icon": "fa fa-television"
     },
     {
       "title": "Booking",

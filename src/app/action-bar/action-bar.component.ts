@@ -2,7 +2,7 @@ import {
   Component, OnInit, EventEmitter, Output, trigger, state, style, Input, transition,
   animate
 } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'pd-action-bar',
@@ -41,13 +41,14 @@ export class ActionBarComponent implements OnInit {
     this.state == 'closed' ? this.state = 'open' : this.state = 'closed';
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.router.events.subscribe(route => {
       this.state = 'closed';
     });
   }
 
   ngOnInit() {
+
   }
 
 }

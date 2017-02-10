@@ -1,67 +1,114 @@
-<div class="card">
-  <div class="card-block">
-    <p class="card-text">
-      jeweler-account works!
-    </p>
+<div class="ui two stackable cards">
+  <!--Password-->
+  <div class="ui card">
+    <div class="content">
+      <div class="ui header">Password</div>
+      <form class="ui form">
+        <div class="field">
+          <label>Current Password</label>
+          <input type="text" name="current-password">
+        </div>
 
-    <ngb-tabset>
+        <div class="field">
+          <label>New Password</label>
+          <input type="text" name="current-password">
+        </div>
 
-      <ngb-tab title="Reward Card">
-        <template ngbTabContent>
-          <pd-reward-card></pd-reward-card>
-        </template>
-      </ngb-tab>
+        <div class="field">
+          <label>Re-Type Password</label>
+          <input type="text" name="current-password">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Contract -->
+  <div class="ui card">
+    <div class="content">
+      <div class="ui header">Contract Renewal</div>
+      <div class="ui form success">
+        <div class="ui success message">
+          <p><b>Start Date: </b>01/01/2010</p>
+          <p><b>End Date: </b>01/01/2010</p>
+        </div>
+        <button class="ui labeled icon button">
+          <i class="print icon"></i>
+          Print Contract
+        </button>
+        <button class="ui labeled icon button">
+          <i class="arrow right icon"></i>
+          Renew Contract
+        </button>
+      </div>
+    </div>
+  </div>
 
-      <ngb-tab title="Contract">
-        <template ngbTabContent>
-          <pd-contract-info></pd-contract-info>
-        </template>
-      </ngb-tab>
+  <div class="card">
+    <div class="content">
+      <div class="header">Personal Web Site Settings</div>
+    </div>
+    <div class="content">
+      <ngb-tabset>
 
-      <ngb-tab title="Personal Web Page">
-        <template ngbTabContent>
-          <pd-personal-webpage></pd-personal-webpage>
-        </template>
-      </ngb-tab>
+        <ngb-tab title="Reward Card">
+          <template ngbTabContent>
+            <pd-reward-card></pd-reward-card>
+          </template>
+        </ngb-tab>
 
-      <ngb-tab title="eComm Settings">
-        <template ngbTabContent>
-          <pd-personal-ecommerce></pd-personal-ecommerce>
-        </template>
-      </ngb-tab>
-    </ngb-tabset>
+        <ngb-tab title="Contract">
+          <template ngbTabContent>
+            <pd-contract-info></pd-contract-info>
+          </template>
+        </ngb-tab>
 
+        <ngb-tab title="Personal Web Page">
+          <template ngbTabContent>
+            <pd-personal-webpage></pd-personal-webpage>
+          </template>
+        </ngb-tab>
+
+        <ngb-tab title="eComm Settings">
+          <template ngbTabContent>
+            <pd-personal-ecommerce></pd-personal-ecommerce>
+          </template>
+        </ngb-tab>
+      </ngb-tabset>
+
+    </div>
+  </div>
+
+  <div class="ui card">
+    <div class="content">
+      <div class="header">eCommerce Settings</div>
+    </div>
+    <div class="content">
+      <h4 class="ui sub header">Activity</h4>
+      <div class="ui small feed">
+        <div class="event">
+          <div class="content">
+            <div class="summary">
+              <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="content">
+            <div class="summary">
+              <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="content">
+            <div class="summary">
+              <a>Helen Troy</a> added two pictures
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="extra content">
+      <button class="ui button">Join Project</button>
+    </div>
   </div>
 </div>
-
-<pre>
-  <ol class="list-unstyled">
-    <li>Contracts/Renewals
-      <ul>
-        <li>New Contracts</li>
-        <li>Training Show Verification?</li>
-        <li>My Renewal Contract</li>
-        <li>Pre-Pay my next Annual Renewal Fee</li>
-      </ul>
-    </li>
-    <li>Jeweler Rewards Card
-      <ul>
-        <li>Application Process?</li>
-        <li>Credit Application</li>
-        <li>Jeweler Rewards Card History</li>
-        <li>Rewards</li>
-        <li>Pay Bill Online</li>
-        <li>Rewards Card Points Chart</li>
-        <li>Rewards Card Points Redemption Form</li>
-      </ul>
-    </li>
-    <li>Internet Policy?</li>
-    <li>Tax Information
-      <ul>
-        <li>Tax Rate Calculator</li>
-        <li>Income Taxes</li>
-        <li>IRS Tax Info</li>
-      </ul>
-    </li>
-  </ol>
-</pre>

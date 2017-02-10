@@ -1,26 +1,81 @@
-<nav class="navbar navbar-toggleable-md navbar-light">
-  <a class="navbar-brand"><i class="icon-options-vertical"></i> </a>
+<nav class="ui borderless menu">
 
-  <form class="form-inline my-2 my-lg-0">
-    <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
-    <pd-action-bar-search></pd-action-bar-search>
-  </form>
-
-  <button class="navbar-toggler navbar-toggler-right"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <pd-mobile-side-bar></pd-mobile-side-bar>
+  <!-- Search -->
+  <div class="ui category search item hidden-md-down">
+    <div class="ui transparent icon input">
+      <input class="prompt" type="text" placeholder="Search...">
+      <i class="search link icon"></i>
+    </div>
+    <div class="results"></div>
   </div>
-  <div class="navbar-toggler-right">
-    <pd-quick-action-icons></pd-quick-action-icons>
+
+  <!-- Right Menu -->
+  <div class="right icon menu">
+
+    <div class="nav-item dropdown">
+      <a class="item" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="question icon"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="navbarDropdownMenuLink">
+        <div class="ui vertical menu">
+          <div class="item">
+            <div class="header">Support</div>
+            <div class="menu">
+              <a class="item" href="#">(800) 486-7378</a>
+              <a class="item" href="#">service@premierdesigns.com</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="header">Marketing</div>
+            <div class="menu">
+              <a class="item" href="#">marketingservices@premierdesigns.com</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="menu">
+              <a class="item" routerLinkActive="active" [routerLink]="['/contactus']">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a class="item" id="quickAddMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="add circle icon"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="quickAddMenu">
+        <div class="ui vertical menu">
+          <div class="header item">Quick Add</div>
+          <a class="item">
+            New Order
+          </a>
+          <a class="item">
+            New Event
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a class="item" id="notificationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="alarm outline icon"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right notificationListDropdown p-4" aria-labelledby="notificationList">
+        <pd-notifications></pd-notifications>
+      </div>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="nav-item dropdown hidden-md-up">
+      <a class="item" id="mobileNavigation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="content icon"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="mobileNavigation">
+        <pd-mobile-side-bar></pd-mobile-side-bar>
+      </div>
+    </div>
+
   </div>
 
 </nav>

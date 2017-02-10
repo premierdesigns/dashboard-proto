@@ -1,0 +1,7 @@
+<ul class="nav">
+  <li *ngFor="let platform of socialList" class="nav-item">
+    <a href="{{platform.url}}" class="nav-link" [ngClass]="{disabled: !platform.connected}">
+      <i class="{{platform.icon}}"></i>
+    </a>
+  </li>
+</ul>

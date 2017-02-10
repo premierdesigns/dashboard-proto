@@ -7,6 +7,7 @@ import { Order } from './order';
 import { OrderService } from "./order.service";
 import { AccordianComponent } from './orders-accordion/accordian/accordian.component';
 import { OrdersStatsComponent } from './orders-stats/orders-stats.component';
+import {OrderDetailComponent} from "./order-detail/order-detail.component";
 
 @Component({
   selector: 'pd-orders',
@@ -32,7 +33,6 @@ import { OrdersStatsComponent } from './orders-stats/orders-stats.component';
 
 export class OrdersComponent implements OnInit {
   @ViewChild(OrdersStatsComponent)
-  title = 'Orders';
   public isCollapsed = true;
   orders: Order[];
   selectedOrder: Order;
@@ -67,8 +67,12 @@ export class OrdersComponent implements OnInit {
       return 'info';
   }
 
-  onSelect(order: Order): void {
+  orderSelected(order: Order): void {
     this.selectedOrder = order;
   }
+
+  // sortedOrders(): Order[] {
+  //   return this.orders.sort((a:Order, b: Order) => b.orderDate - a.orderDate);
+  // }
 
 }

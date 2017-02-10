@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CreativeResourcesComponent } from './creative-resources.component';
+import { ShareToSocialComponent } from './share-to-social.component';
 
-describe('CreativeResourcesComponent', () => {
-  let component: CreativeResourcesComponent;
-  let fixture: ComponentFixture<CreativeResourcesComponent>;
+describe('ShareToSocialComponent', () => {
+  let component: ShareToSocialComponent;
+  let fixture: ComponentFixture<ShareToSocialComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreativeResourcesComponent ]
+      declarations: [ ShareToSocialComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreativeResourcesComponent);
+    fixture = TestBed.createComponent(ShareToSocialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

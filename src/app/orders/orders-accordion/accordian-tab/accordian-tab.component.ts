@@ -8,6 +8,7 @@ import {Component,
   style,
   transition,
   animate} from '@angular/core';
+import {Order} from "../../order";
 
 @Component({
   selector: 'pd-accordian-tab',
@@ -34,8 +35,7 @@ export class AccordianTabComponent implements OnInit {
 
   @Output() toggle = new EventEmitter<any>();
 
-  toggleContent() {
-    // this.toggle.emit(null)
+  onSelect(order: Order) {
   }
 
   constructor() { }

@@ -1,5 +1,3 @@
-<pd-orders-stats [orders]="orders" [currentFilter]="orderFilterString" (changeFilterString)="changeOrderFilter($event)"></pd-orders-stats>
-
 <div class="card">
   <div class="card-header">
     <div class="row">
@@ -43,27 +41,5 @@
 
     </div>
   </div>
-  <pd-accordian [orders]="orders" [filterOrders]="orderFilterString"></pd-accordian>
+  <pd-accordian [orders]="orders" [filterOrders]="orderFilterString" (orderSelected)="orderSelected($event)"></pd-accordian>
 </div>
-
-<hr>
-
-<pre>
-  #### FUNCTIONALITY
-
-  * Orders show on individual rows
-  * Jewelery Show orders will be grouped together and user will click on row to drop-down each individual order
-  associated with that show(event) order.
-  * Orders submitted to the jeweler either through the jewelers personal page or created by the jeweler show here
-  * Row color will indicate the status of the order (submitted to premier, processing, shipped, etc...)
-  * The action column will give jewelers the ability to edit, submit, print invoice or delete an order
-  * Columns should be sortable by the header column
-  * Search box in the card header to search anything in the orders and a date box to search by date
-  * Icon on the far left indicates order type (personal, individual, group/event)
-
-  #### QUESTIONS
-
-  #### IDEAS
-
-  #### DATA
-</pre>

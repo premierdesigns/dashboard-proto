@@ -11,6 +11,8 @@ import {EventsComponent} from "./events/events.component";
 import {JewelerAccountComponent} from "./jeweler-account/jeweler-account.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {StarWarsComponent} from "./star-wars/star-wars.component";
+import {OrderDetailComponent} from "./orders/order-detail/order-detail.component";
+import {ContactUsComponent} from "./contact-us/contact-us.component";
 
 // This is where we setup our routes!
 const APP_ROUTES: Routes = [
@@ -25,7 +27,9 @@ const APP_ROUTES: Routes = [
   { path: 'events', component: EventsComponent},
   { path: 'account', component: JewelerAccountComponent},
   { path: 'settings', component: SettingsComponent},
-  { path: 'starwars', component: StarWarsComponent }
+  { path: 'starwars', component: StarWarsComponent },
+  { path: 'orders/orderdetail', component: OrderDetailComponent},
+  { path: 'contactus', component: ContactUsComponent}
 ];
 
 @NgModule({

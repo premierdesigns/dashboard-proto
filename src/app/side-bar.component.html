@@ -1,12 +1,10 @@
 <div class="side-bar">
   <!-- Title Row -->
   <div class="container">
-    <div class="row p-3 text-center">
+    <div class="row p-3 text-center hidden-md-down">
       <div class="col">
         <img src="../assets/images/Logo-Stacked-white.png" class="img-fluid" style="width: 50%; height: auto;">
       </div>
-      <!--<span class="col-sm-12 hidden-lg-up">JP</span>-->
-      <!--<span class="col-sm-12 hidden-md-down">Jeweler Portal <small>Proto</small></span>-->
     </div>
 
     <hr class="mt-0">
@@ -38,29 +36,43 @@
 
     <hr>
 
-    <ul class="nav nav-pills flex-column">
+    <ul class="nav nav-pills flex-column text-md-left">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']">
-          <i class="fa fa-fw icon-graph"></i>Dashboard
+          <i class="fa fa-fw icon-graph"></i>
+          <span class="hidden-md-down">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']"><i class="fa fa-fw fa-clipboard"></i>Orders</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/orders']">
+          <i class="fa fa-fw icon-basket-loaded"></i>
+          <span class="hidden-md-down">Orders</span>
+          <span class="badge badge-pill badge-default">5</span>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']"><i class="fa fa-fw icon-event"></i>Events</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/events']">
+          <i class="fa fa-fw icon-event"></i>
+          <span class="hidden-md-down">Events</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/resources']"><i
-          class="fa fa-fw fa-picture-o"></i>Resources</a>
+          class="fa fa-fw icon-layers"></i>
+          <span class="hidden-md-down">Resources</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/training']"><i
-          class="fa fa-fw fa-university"></i>Training</a>
+          class="fa fa-fw icon-graduation"></i>
+          <span class="hidden-md-down">Training</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/familytree']"><i
-          class="fa fa-fw fa-pagelines"></i>Family Tree</a>
+          class="fa fa-fw fa-pagelines"></i>
+          <span class="hidden-md-down">Family Tree</span>
+        </a>
       </li>
     </ul>
   </div>

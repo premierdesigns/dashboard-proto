@@ -14,7 +14,7 @@ export class OrderFilterPipe implements PipeTransform {
       return allOrders;
     }
 
-    return allOrders.filter(order => order.orderType === args);
+    return allOrders.filter(order => order.orderStatus === args);
 
 
     // if (value.length === 0) {

@@ -1,7 +1,7 @@
 <div [ngSwitch]="order.orderType">
 
   <div class="align-items-center mx-0">
-    <div (click)="toggleContent()" class="row list-group-item list-group-item-action border-0 mx-0 py-3">
+    <div (click)="onSelect(order)" class="row list-group-item list-group-item-action border-0 mx-0 py-3" [routerLink]="order.orderType !== 'Event' ? ['/orders/orderdetail'] : []">
 
       <!--Order Information-->
       <div class="col">

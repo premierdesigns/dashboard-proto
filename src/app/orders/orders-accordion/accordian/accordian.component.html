@@ -1,6 +1,6 @@
 <div>
   <pd-accordian-tab *ngFor="let order of orders | orderFilter: filterOrders" [title]="order.firstName" (click)="toggle(order)" [extended]="isActive(order)" [id]="order.id" [order]="order">
-    <div class="col py-3">
+    <div class="col py-3" *ngIf="order.orderType === 'Event'">
       <div class="row">
         <div class="col">
           <table class="table">

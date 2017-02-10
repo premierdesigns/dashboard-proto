@@ -2,7 +2,7 @@ import {BrowserModule, Title} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule, BaseRequestOptions, Http} from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from "./app-routing.module";
 import {ChartsModule} from 'ng2-charts';
 import {AgmCoreModule} from  'angular2-google-maps/core';
@@ -23,7 +23,6 @@ import {TrainingPageComponent} from './training-page/training-page.component';
 import {OrderService} from "./orders/order.service";
 import {ShowsService} from "./shows/shows.service";
 import {JewelerService} from "./jeweler-profile/jeweler.service";
-
 import {BillingInfoComponent} from './jeweler-profile/billing-info/billing-info.component';
 import {ShippingInfoComponent} from './jeweler-profile/shipping-info/shipping-info.component';
 import {SidebarColorDirective} from './sidebar-color.directive';
@@ -53,10 +52,10 @@ import {OrdersStatsComponent} from './orders/orders-stats/orders-stats.component
 import {CardIconsComponent} from './dashboard/card-icons/card-icons.component';
 import {AccordianComponent} from './orders/orders-accordion/accordian/accordian.component';
 import {AccordianTabComponent} from './orders/orders-accordion/accordian-tab/accordian-tab.component';
-import { OrderFilterPipe } from './orders/order-filter.pipe';
+import {OrderFilterPipe} from './orders/order-filter.pipe';
 import {CommunicationsComponent} from "./settings/communications/communications.component";
 import {EventCalendarComponent} from "./events/event-calendar/event-calendar.component";
-import { CalendarModule } from 'angular-calendar';
+import {CalendarModule} from 'angular-calendar';
 import {BookingComponent} from "./training-page/booking/booking.component";
 import {InspirationComponent} from "./training-page/inspiration/inspiration.component";
 import {JewelryShowBasicsComponent} from "./training-page/jewelry-show-basics/jewelry-show-basics.component";
@@ -66,6 +65,12 @@ import {PremierLifeComponent} from "./training-page/premier-life/premier-life.co
 import {ProductVersatilityComponent} from "./training-page/product-versatility/product-versatility.component";
 import {RetailingComponent} from "./training-page/retailing/retailing.component";
 import {SponsoringComponent} from "./training-page/sponsoring/sponsoring.component";
+import {ShareToSocialComponent} from "./shared/share-to-social/share-to-social.component";
+import {DashboardCardComponent} from "./dashboard/dashboard-card/dashboard-card.component";
+import {ModalDirective} from "./shared/modal.directive";
+import {OrderDetailComponent} from "./orders/order-detail/order-detail.component";
+import {NotificationsComponent} from "./notifications/notifications.component";
+import {ContactUsComponent} from "./contact-us/contact-us.component";
 
 @NgModule({
   declarations: [
@@ -118,7 +123,13 @@ import {SponsoringComponent} from "./training-page/sponsoring/sponsoring.compone
     PremierLifeComponent,
     ProductVersatilityComponent,
     RetailingComponent,
-    SponsoringComponent
+    SponsoringComponent,
+    ShareToSocialComponent,
+    DashboardCardComponent,
+    ModalDirective,
+    OrderDetailComponent,
+    NotificationsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +141,8 @@ import {SponsoringComponent} from "./training-page/sponsoring/sponsoring.compone
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBX7FrVuQ_sNxJ59mojjgHiVmlri7viEBg'
     }),
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    NgbModalModule.forRoot()
   ],
   providers: [
     OrderService,

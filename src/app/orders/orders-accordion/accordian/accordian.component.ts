@@ -1,9 +1,10 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
 import { AccordianTabComponent } from '../accordian-tab/accordian-tab.component';
+import {Order} from "../../order";
 
 @Component({
   selector: 'pd-accordian',
@@ -16,8 +17,11 @@ export class AccordianComponent implements OnInit {
 
   @Input() filterOrders;
 
+  @Output() orderSelected = new EventEmitter<any>();
+
   toggle(order) {
     this.isActive(order) ? this.activeOrderId = 0 : this.activeOrderId = order.id;
+    this.orderSelected.emit(order);
   }
 
   isActive(order) {

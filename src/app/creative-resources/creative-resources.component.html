@@ -1,68 +1,33 @@
-<pd-orders-stats></pd-orders-stats>
+<div class="ui segment">
 
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">
-      Creative Resources
-    </h4>
-    <p class="card-text">
-      This page will hold all of the creative resources for jewelers on a single full-page card with filters along the top to find exactly what they need.
-    </p>
+  <h1 class="ui header">Creative Resources</h1>
 
-    <div class="row">
-      <div class="col-sm-12 col-sm-6 col-md-3 col-lg-2 resCard pr-0" *ngFor="let resource of resources" [ngStyle]="{'background-image': 'url(' + resource.url + ')'}">
-        <span class="social-share float-sm-right text-sm-right">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a>
-                <i class="icon-social-facebook"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a>
-                <i class="fa fa-fw fa-envelope-o"></i>
-              </a>
-            </li>
-          </ul>
-        </span>
-        <!--<img class="img-fluid" src="https://source.unsplash.com/random">-->
-        <p class="lead">{{resource.title}}</p>
-      </div>
+  <div class="ui fluid text menu">
+    <div class="item header">
+      FILTER BY:
     </div>
+    <a class="item">
+      <i class="large lightbulb icon"></i>
+    </a>
+    <a class="item">
+      <i class="large camera retro icon"></i>
+    </a>
+    <a class="item">
+      <i class="large film icon"></i>
+    </a>
+  </div>
 
-    <!--<div class="row">-->
-      <!--<div class="col-sm-12 col-lg-2" *ngFor="let resource of resources">-->
-        <!--<div class="card card-inverse">-->
-          <!--<img src="{{resource.url}}" alt="..." class="card-img img-fluid">-->
-          <!--<div class="card-img-overlay">-->
-            <!--<p class="card-text">{{resource.title}}</p>-->
-            <!--<p class="card-text">{{resource.description}}</p>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
+  <div class="ui divider"></div>
 
+  <div class="ui eight doubling cards">
+    <a class="card" *ngFor="let resource of resources" href="{{resource.url}}">
+      <div class="image">
+        <img src="http://placehold.it/500x300">
+      </div>
+      <div class="content">
+        <div class="header">{{resource.title}}</div>
+        <div class="meta">{{resource.fileType}}</div>
+      </div>
+    </a>
   </div>
 </div>
-
-
-
-<pre>
-  #### FUNCTIONALITY
-
-  - This page will be similar to the [Jeweler Resources](https://jeweler.premierdesigns.com/en/resources) page that the jewelers have now.
-  - Jewelers can download, print, or add to one of their connected social media accounts directly from this page.
-
-  #### QUESTIONS
-
-  #### IDEAS
-
-  - Ability to drag-and-drop images to an email
-  - Function to 'favorite' images or create a favorites list
-
-  #### DATA
-
-  * Marketing resources for jewelers from Epi
-    * Ideally, marketing would put resources in Epi CMS and then pull into here for display in a grid style
-
-</pre>

@@ -2,41 +2,6 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
 
     <div class="form-group row">
-      <!-- EMAIL ADDRESS -->
-      <label for="exampleInputEmail1" class="col-sm-2 col-form-label text-sm-right">Email address</label>
-      <div class="col-sm-10">
-        <div class="input-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                 placeholder="{{jeweler.email}}">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-fw fa-envelope-o"></i>
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row col-sm-10 offset-sm-2">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-
-    <div class="form-group row">
-      <!-- PASSWORD -->
-      <label for="exampleInputPassword1" class="col-sm-2 col-form-label text-sm-right">Password</label>
-      <div class="col-sm-10">
-        <div class="input-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button">
-              <i class="fa fa-fw fa-key"></i>
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row">
       <!-- SHIPPING ADDRESS -->
       <label for="address1" class="col-sm-2 col-form-label text-sm-right">Street Address</label>
       <div class="col-sm-10">
@@ -126,7 +91,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-outline-success">SAVE</button>
+    <button class="positive ui button">Positive Button</button>
+
 
   </form>
 

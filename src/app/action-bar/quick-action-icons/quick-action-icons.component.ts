@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDirective } from '../../shared/modal.directive';
 
 @Component({
   selector: 'pd-quick-action-icons',

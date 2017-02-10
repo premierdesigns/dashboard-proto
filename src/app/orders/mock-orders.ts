@@ -12,7 +12,7 @@ export const ORDERS: Order[] = [
     "payment": "check",
     "orderDate": "1/5/2017",
     "orderType": "Event",
-    "orderStatus": "Errors",
+    "orderStatus": "Open",
     "progress": 37
   },
   {

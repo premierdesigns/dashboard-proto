@@ -1,130 +1,204 @@
-<div class="row mt-2">
-  <div class="col-8">
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col">
-            Next Event
+<div class="row">
+
+  <div class="col-sm-12 col-lg-3">
+    <div class="ui info message mb-3">
+      <div class="ui huge horizontal statistics">
+        <div class="grey statistic">
+          <div class="value">
+            5
           </div>
-          <div class="col text-right">
-            <pd-card-icons></pd-card-icons>
-          </div>
-        </div>
-      </div>
-      <div class="card-block">
-        <div class="card-title">
-          <div class="row">
-            <div class="col-6">
-              <h5>National Rally is coming!</h5>
-            </div>
-            <div class="col-6 text-right">
-              <a href="#" class="text-danger text-uppercase"><b><i class="fa fa-fw fa-calendar-check-o"></i> Register Now!</b></a>
-            </div>
+          <div class="label">
+            Open Orders
           </div>
         </div>
-        <div class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dolore dolores fuga fugiat ipsa ipsum iusto laudantium libero minima, molestiae, perspiciatis quas quasi rem suscipit tempore voluptate! Excepturi, pariatur?
-        </div>
+        <p>Go to your <a [routerLink]="['/orders']"><b>orders</b></a> to take some action now.</p>
       </div>
     </div>
   </div>
 
-  <div class="col">
-    <div class="card">
-      <div class="card-block">
-        <div class="float-right">
-          <!--<pd-card-icons></pd-card-icons>-->
-        </div>
-        <div class="card-title">
-          <h5>Card 2</h5>
-        </div>
+  <div class="col-sm-12 col-lg-6">
+
+    <div class="ui info message mb-3">
+      <i class="close icon"></i>
+      <div class="header">
+        You have <b>5</b> open orders
       </div>
+      <p>Go to your <a [routerLink]="['/orders']"><b>orders</b></a> to take some action now.</p>
     </div>
+
   </div>
+
+  <pd-dashboard-card *ngFor="let card of cards"
+                     [ngClass]="'col-lg-' + card.size"
+                     class="col-sm-12"
+                     [ngSwitch]="card.type">
+    <img *ngSwitchCase="'promoAd'" class="card-img img-fluid" src="{{card.image}}"/>
+    <div *ngIf="card.header" class="card-header">{{card.header}}</div>
+    <div *ngIf="card.title && card.description" class="card-block">
+      <div class="row">
+        <h5 class="col">{{card.title}}</h5>
+      </div>
+      <p *ngIf="card.description" class="card-text" style="font-family: 'LatoWeb';">{{card.description}}</p>
+    </div>
+    <div class="card-footer text-center">
+      <a class="card-link text-primary" [routerLink]="['/orders']">
+        <i class="icon-arrow-right-circle"></i> go to orders</a>
+    </div>
+  </pd-dashboard-card>
+
 </div>
 
-<div class="row mt-2">
+<div class="row">
 
-  <div class="col-8">
-
-    <div class="card">
-      <div class="card-header">
-        Your Next Jewelry Show
-        <ul class="card-tools list-inline pull-right mb-0">
-          <li class="list-inline-item text-muted small">
-            <i class="fa fa-fw fa-window-minimize" data-toggle="collapse" data-target="#nextEvent"
-               aria-expanded="true" aria-controls="nextEvent"></i>
-          </li>
-        </ul>
-      </div>
-      <div class="collapse show" id="nextEvent">
-        <div class="card-block">
-          <div class="row">
-            <div class="col-sm-12 col-md-8">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item"
-                        frameborder="0" style="border:0"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMgLxIhSj5lKlJrvXSz-HEqQ23HH1-cFo&q=Premier+Designs,Irving+TX"
-                        allowfullscreen>
-                </iframe>
-              </div>
-              <!--<sebm-google-map [latitude]="lat" [longitude]="lng">-->
-              <!--<sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>-->
-              <!--</sebm-google-map>-->
-            </div>
-            <div class="col-sm-12 col-md-4">
-              <h6 class="card-title">
-                <small>01/01/2017</small>
-                <br>Host Name
-              </h6>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Action Button</a>
-            </div>
-          </div>
+  <div class="col-sm-12 col-lg-3">
+    <div class="ui fluid red card">
+      <div class="content">
+        <a [routerLink]="['/orders']" class="right floated">
+          <i class="chevron right icon"></i>
+        </a>
+        <div class="header"><b>5</b> Open Orders</div>
+        <div class="meta">
+          since three days ago
+        </div>
+        <div class="description">
+          <p>Your oldest order has been sitting there for 30 days! Get that submitted ASAP!</p>
         </div>
       </div>
     </div>
-
-  </div>
-
-  <div class="col-4">
-    <pd-sales-card></pd-sales-card>
   </div>
 
 </div>
 
 
+<!--<div class="row">-->
+  <!--<div class="col-sm-12 col-lg-4">-->
+    <!--<pd-dashboard-card>-->
+      <!--<div class="card-block">-->
+        <!--<h3 class="text-muted">5 <small>Open Orders</small></h3>-->
+      <!--</div>-->
+    <!--</pd-dashboard-card>-->
+  <!--</div>-->
+  <!--<div class="col-sm-12 col-lg-8">-->
+    <!--<pd-dashboard-card>-->
+      <!--<div class="card-header">Latest Orders</div>-->
+      <!--<div class="list-group">-->
+        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">-->
+          <!--<div class="d-flex w-100 justify-content-between">-->
+            <!--<h5 class="mb-1">Bob Bolander</h5>-->
+            <!--<small><span class="badge badge-success mr-2">50</span> today</small>-->
+          <!--</div>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">-->
+          <!--<div class="d-flex w-100 justify-content-between">-->
+            <!--<h5 class="mb-1">James Davis</h5>-->
+            <!--<small><span class="badge badge-success mr-2">16</span> today</small>-->
+          <!--</div>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">-->
+          <!--<div class="d-flex w-100 justify-content-between">-->
+            <!--<h5 class="mb-1">Marty McFly</h5>-->
+            <!--<small><span class="badge badge-success mr-2">10</span> yesterday</small>-->
+          <!--</div>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">-->
+          <!--<div class="d-flex w-100 justify-content-between">-->
+            <!--<h5 class="mb-1">Peter Parker</h5>-->
+            <!--<small><span class="badge badge-warning mr-2">4</span> 3 days ago</small>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="card-footer">-->
+        <!--<a [routerLink]="['/orders']" class="card-link">View All Orders</a>-->
+      <!--</div>-->
+    <!--</pd-dashboard-card>-->
+  <!--</div>-->
+  <!---->
+  <!--<pd-dashboard-card *ngFor="let card of cards" [ngClass]="'col-lg-' + card.size" class="col-sm-12"-->
+                     <!--[ngSwitch]="card.type">-->
+    <!--<img *ngSwitchCase="'promoAd'" class="card-img img-fluid" src="{{card.image}}"/>-->
+    <!--<div *ngIf="card.header" class="card-header">{{card.header}}</div>-->
+    <!--<div *ngIf="card.title && card.description" class="card-block">-->
+      <!--<div class="row">-->
+        <!--<h5 class="col">{{card.title}}</h5>-->
+      <!--</div>-->
+      <!--<p *ngIf="card.description" class="card-text">{{card.description}}</p>-->
+    <!--</div>-->
+  <!--</pd-dashboard-card>-->
 
+  <!--<pd-dashboard-card class="col-sm-12 col-lg-8">-->
+    <!--<div class="card-header">-->
+      <!--Your Next Event-->
+      <!--<ul class="card-tools list-inline pull-right mb-0">-->
+        <!--<li class="list-inline-item text-muted small">-->
+          <!--<i class="fa fa-fw fa-window-minimize" data-toggle="collapse" data-target="#nextEvent"-->
+             <!--aria-expanded="true" aria-controls="nextEvent"></i>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="collapse show card-block" id="nextEvent">-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-12 col-md-8">-->
+          <!--<div class="embed-responsive embed-responsive-16by9">-->
+            <!--<iframe class="embed-responsive-item"-->
+                    <!--frameborder="0" style="border:0"-->
+                    <!--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMgLxIhSj5lKlJrvXSz-HEqQ23HH1-cFo&q=Premier+Designs,Irving+TX"-->
+                    <!--allowfullscreen>-->
+            <!--</iframe>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-12 col-md-4">-->
+          <!--<h6 class="card-title">-->
+            <!--<small>01/01/2017</small>-->
+            <!--<br>Host Name-->
+          <!--</h6>-->
+          <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+          <!--<a href="#" class="btn btn-primary">Action Button</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</pd-dashboard-card>-->
 
-<hr>
+  <!--<div class="col-sm-12 col-md-4">-->
+    <!--<pd-sales-card></pd-sales-card>-->
+  <!--</div>-->
+<!--</div>-->
 
-<pre>
-  <code>
-    #### FUNCTIONALITY
+<!--<hr>-->
 
-      - Each "white box" on the dashboard page represents a card with a widget showing various bits of data
-      - Some of these boxes will be customizable by the jeweler, some will not.
-      - Action bar across the top will be for search, help/support, quick-add (order, show, contact, etc), and notifications
-      - Cards can be customized on where they sit and how big they are
+<!--<button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"-->
+        <!--[attr.aria-expanded]="!isCollapsed" aria-controls="pageNotes">Notes-->
+<!--</button>-->
 
-      #### QUESTIONS
+<!--<div id="pageNotes" [ngbCollapse]="isCollapsed" class="jumbotron">-->
+  <!--<pre>-->
+  <!--<code>-->
+    <!--#### FUNCTIONALITY-->
 
-      #### IDEAS
+      <!-- - Each "white box" on the dashboard page represents a card with a widget showing various bits of data-->
+      <!-- - Some of these boxes will be customizable by the jeweler, some will not.-->
+      <!-- - Action bar across the top will be for search, help/support, quick-add (order, show, contact, etc), and notifications-->
+      <!-- - Cards can be customized on where they sit and how big they are-->
 
-      Cards:
-      - Sales
-        - Year-to-date
-        - vs. previous year
-        - past six months (or some other amount)
-      - Upcoming Shows
-      - Current promotions
-      - New jewelers in my downline
+      <!--#### QUESTIONS-->
 
-      FUTURE
-      - Add community, 'social media' type functionality to the entire dashboard
+      <!--#### IDEAS-->
 
-      #### DATA
+      <!--Cards:-->
+      <!-- - Sales-->
+        <!-- - Year-to-date-->
+        <!-- - vs. previous year-->
+        <!-- - past six months (or some other amount)-->
+      <!-- - Upcoming Shows-->
+      <!-- - Current promotions-->
+      <!-- - New jewelers in my downline-->
 
-      The data that shows up and needs to be connected here will vary and change based on what cards/widgets are showing on the dashboard.
-  </code>
-</pre>
+      <!--FUTURE-->
+      <!-- - Add community, 'social media' type functionality to the entire dashboard-->
+
+      <!--#### DATA-->
+
+      <!--The data that shows up and needs to be connected here will vary and change based on what cards/widgets are showing on the dashboard.-->
+  <!--</code>-->
+<!--</pre>-->
+
+<!--</div>-->

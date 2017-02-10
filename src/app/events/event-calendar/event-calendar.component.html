@@ -1,1 +1,187 @@
-<img src="../../../assets/images/outlook-calendar.PNG" class="img-fluid">
+<template ngbModalContainer></template>
+
+<template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{modalData?.event.title}}</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <p>{{modalData?.event.title}}</p>
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+  </div>
+</template>
+
+<div class="card">
+  <!-- Action Nav-->
+  <div class="row">
+
+    <!-- Calendar View -->
+    <div class="col">
+      <!-- Action Row-->
+      <div class="row bg-faded">
+        <div class="col">
+          <ul class="nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="icon-plus small pr-2"></i> New
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Training</a>
+                <a class="dropdown-item" href="#">Event</a>
+                <a class="dropdown-item" href="#">Jewelry Show</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-calendar-plus-o small pr-2"></i> Add Calendar
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Google Calendar</a>
+                <a class="dropdown-item" href="#">Holidays</a>
+                <a class="dropdown-item" href="#">Important PDI Dates</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="icon-share small pr-2"></i> Share</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="icon-printer small pr-2"></i>Print</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Calendar View Row -->
+      <!--My View-->
+      <div class="row py-3">
+        <div class="col">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link"
+                 mwlCalendarPreviousView
+                 [view]="view"
+                 [(viewDate)]="viewDate">
+                <i class="icon-arrow-left"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                 mwlCalendarNextView
+                 [view]="view"
+                 [(viewDate)]="viewDate">
+                <i class="icon-arrow-right"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <h5 class="nav-link disabled">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h5>
+            </li>
+            <!--<li class="nav-item dropdown">-->
+              <!--<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">January 2017</a>-->
+              <!--<div class="dropdown-menu">-->
+                <!--<a class="dropdown-item" href="#">February</a>-->
+                <!--<a class="dropdown-item" href="#">March</a>-->
+                <!--<a class="dropdown-item" href="#">April</a>-->
+                <!--<a class="dropdown-item" href="#">May</a>-->
+                <!--<a class="dropdown-item" href="#">June</a>-->
+                <!--<a class="dropdown-item" href="#">July</a>-->
+                <!--<a class="dropdown-item" href="#">August</a>-->
+                <!--<a class="dropdown-item" href="#">September</a>-->
+                <!--<a class="dropdown-item" href="#">October</a>-->
+                <!--<a class="dropdown-item" href="#">November</a>-->
+                <!--<a class="dropdown-item" href="#">December</a>-->
+              <!--</div>-->
+            <!--</li>-->
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" (click)="view = 'day'" [class.active]="view === 'day'">Day</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="view = 'week'" [class.active]="view === 'week'">Week</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="view = 'month'" [class.active]="view === 'month'">Month</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" mwlCalendarToday [(viewDate)]="viewDate">Today</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div [ngSwitch]="view">
+        <mwl-calendar-month-view
+          *ngSwitchCase="'month'"
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          [activeDayIsOpen]="activeDayIsOpen"
+          (dayClicked)="dayClicked($event.day)"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view
+          *ngSwitchCase="'week'"
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view
+          *ngSwitchCase="'day'"
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-day-view>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="row">
+        <div class="col">
+          <div class="bg-faded">
+            <form>
+              <div class="form-group">
+                <input value="search" class="form-control">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col">
+          calendar view
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col">
+          show/hide calendars
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--<div class="row">-->
+  <!--<div class="col">-->
+    <!--<img src="../../../assets/images/outlook-calendar.PNG" class="img-fluid">-->
+  <!--</div>-->
+<!--</div>-->

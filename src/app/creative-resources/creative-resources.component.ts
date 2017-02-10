@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, trigger, state, style, transition, animate } from '@angular/core';
 
 import { Resource } from './resource';
 import { ResourcesService } from './resources.service';
@@ -9,7 +9,16 @@ import * as http from "selenium-webdriver/http";
   selector: 'pd-creative-resources',
   templateUrl: './creative-resources.component.html',
   styleUrls: ['./creative-resources.component.less'],
-  providers: [ResourcesService]
+  providers: [ResourcesService],
+  animations: [
+    trigger('loadResource', [
+      state('in', style({transform: 'translateY(0)'})),
+      transition('void => *', [
+        style({transform: 'translateY(500%)'}),
+        animate('2s 2s ease-in-out')
+      ])
+    ])
+  ]
 })
 export class CreativeResourcesComponent implements OnInit {
   resources: Resource[];
@@ -22,6 +31,14 @@ export class CreativeResourcesComponent implements OnInit {
 
   ngOnInit() {
     this.getResources();
+  }
+
+  mouseEnter(eventObject){
+    console.log("mouse enter : " + eventObject);
+  }
+
+  mouseLeave(div : string){
+    console.log('mouse leave :' + div);
   }
 
 }

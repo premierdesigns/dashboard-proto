@@ -1,88 +1,61 @@
-<pd-orders-stats></pd-orders-stats>
+<div class="card">
+  <div class="card-block">
+    <div class="row mb-3">
+      <ul class="nav nav-pills nav-justified col">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" role="tab">ALL</a>
+        </li>
+        <li *ngFor="let section of trainingSections" class="nav-item" placement="top" ngbTooltip="{{section.title}}">
+          <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" href="{{'#' + section.ref}}" role="tab">
+            <i [ngClass]="section.icon"></i>
+            <span class="link-text small">{{section.title}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-<div class="row mb-3">
-  <ul class="nav nav-pills nav-justified col">
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" role="tab">ALL</a>
-    </li>
-    <li *ngFor="let section of trainingSections" class="nav-item" placement="top" ngbTooltip="{{section.title}}">
-      <a class="nav-link" data-toggle="tab" role="tab" data-toggle="tab" href="{{'#' + section.ref}}" role="tab">
-        <i [ngClass]="section.icon"></i>
-        <!--<span class="link-text pl-2">{{section.title}}</span>-->
-      </a>
-    </li>
-  </ul>
-</div>
+    <div class="row">
 
-<div class="row">
+      <div class="col-9">
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane fade" id="JewelryShowBasics" role="tabpanel">
+            <div class="card">
+              <div class="card-block">
+                <pd-jewelry-show-basics></pd-jewelry-show-basics>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="Booking" role="tabpanel">
+            <pd-booking></pd-booking>
+          </div>
+          <div class="tab-pane fade" id="Retailing" role="tabpanel">
+            <pd-retailing></pd-retailing>
+          </div>
+          <div class="tab-pane fade" id="Sponsoring" role="tabpanel">
+            <pd-sponsoring></pd-sponsoring>
+          </div>
+          <div class="tab-pane fade" id="ProductVersatility" role="tabpanel">
+            <pd-product-versatility></pd-product-versatility>
+          </div>
+          <div class="tab-pane fade" id="MyPremierAwards" role="tabpanel">
+            <pd-my-premier-awards></pd-my-premier-awards>
+          </div>
+          <div class="tab-pane fade" id="PremierLife" role="tabpanel">
+            <pd-premier-life></pd-premier-life>
+          </div>
+          <div class="tab-pane fade" id="Inspiration" role="tabpanel">
+            <pd-inspiration></pd-inspiration>
+          </div>
+          <div class="tab-pane fade" id="MarketingTools" role="tabpanel">
+            <pd-marketing-tools></pd-marketing-tools>
+          </div>
+          <div class="tab-pane fade" id="RegionalRally" role="tabpanel">
+            <h3 class="display-3">Regional Rally 2017!</h3>
+          </div>
+        </div>
+      </div>
 
-  <!--<div class="col">-->
-    <!--&lt;!&ndash; Nav tabs &ndash;&gt;-->
-    <!--<ul class="nav nav-pills flex-column" role="tablist">-->
-      <!--<li *ngFor="let section of trainingSections" class="nav-item">-->
-        <!--<a class="nav-link" data-toggle="tab" href="{{'#' + section.ref}}" role="tab">{{section.title}}</a>-->
-      <!--</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-
-  <div class="col-9">
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div class="tab-pane fade" id="JewelryShowBasics" role="tabpanel">
-        <pd-jewelry-show-basics></pd-jewelry-show-basics>
-      </div>
-      <div class="tab-pane fade" id="Booking" role="tabpanel">
-        <pd-booking></pd-booking>
-      </div>
-      <div class="tab-pane fade" id="Retailing" role="tabpanel">
-        <pd-retailing></pd-retailing>
-      </div>
-      <div class="tab-pane fade" id="Sponsoring" role="tabpanel">
-        <pd-sponsoring></pd-sponsoring>
-      </div>
-      <div class="tab-pane fade" id="ProductVersatility" role="tabpanel">
-        <pd-product-versatility></pd-product-versatility>
-      </div>
-      <div class="tab-pane fade" id="MyPremierAwards" role="tabpanel">
-        <pd-my-premier-awards></pd-my-premier-awards>
-      </div>
-      <div class="tab-pane fade" id="PremierLife" role="tabpanel">
-        <pd-premier-life></pd-premier-life>
-      </div>
-      <div class="tab-pane fade" id="Inspiration" role="tabpanel">
-        <pd-inspiration></pd-inspiration>
-      </div>
-      <div class="tab-pane fade" id="MarketingTools" role="tabpanel">
-        <pd-marketing-tools></pd-marketing-tools>
-      </div>
-      <div class="tab-pane fade" id="RegionalRally" role="tabpanel">
-        <h3 class="display-3">Regional Rally 2017!</h3>
-      </div>
     </div>
   </div>
-
 </div>
-
-
-
-<pre>
-  <code>
-    #### FUNCTIONALITY
-
-    - This page will be similar to the [Jeweler Training](https://jeweler.premierdesigns.com/en/training) page that the jewelers have now.
-
-    #### QUESTIONS
-
-    #### IDEAS
-
-    - We should have training courses that train jewelers progressively on various aspects and not just a-la carte videos.
-    - Points & 'medals' can be awarded based on videos watched and courses completed.
-    - Higher up jewelers can see what videos and courses their downline has done.
-
-    #### DATA
-
-
-    * We should over-haul this to be more focused instead of just random videos for the user to watch
-    ** Some sort of training paths that the jewelers can take that they are guided through
-  </code>
-</pre>

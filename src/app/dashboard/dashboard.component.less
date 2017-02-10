@@ -69,3 +69,16 @@
     }
   }
 }
+
+.card .card-img-overlay {
+  visibility: hidden;
+}
+
+.card:hover > .card-img-overlay {
+  background: fade(#fff, 85%);
+  visibility: visible;
+
+  .card-title, .card-text {
+    color: #4d394b;
+  }
+}

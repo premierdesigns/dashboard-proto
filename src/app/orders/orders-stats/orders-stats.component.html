@@ -1,36 +1,36 @@
 <div class="row mt-1">
   <div class="col">
-    <div class="info-box">
-      <span class="info-box-icon bg-pdiGreen" (click)="changeOrderFilter('Event')">
+    <div class="info-box" [class.active]="currentFilter === 'Open'">
+      <span class="info-box-icon bg-pdiGreen" (click)="changeOrderFilter('Open')">
         <i class="icon-event"></i>
       </span>
       <div class="info-box-content">
-        <span class="info-box-text">Event Orders</span>
+        <span class="info-box-text">Open Orders</span>
         <p class="info-box-number">15</p>
       </div>
     </div>
   </div>
 
   <div class="col">
-    <div class="info-box">
-      <span class="info-box-icon bg-pdiPink" (click)="changeOrderFilter('Individual')">
+    <div class="info-box" [class.active]="currentFilter === 'Submitted'">
+      <span class="info-box-icon bg-pdiPink" (click)="changeOrderFilter('Submitted')">
         <i class="icon-user-female"></i>
       </span>
       <div class="info-box-content">
         <!--<span class="info-box-text">Individual/Web Orders</span>-->
-        <span class="info-box-text">Customer Orders</span>
+        <span class="info-box-text">Submitted Orders</span>
         <p class="info-box-number">100</p>
       </div>
     </div>
   </div>
 
   <div class="col">
-    <div class="info-box">
-      <span class="info-box-icon bg-pdiBlue" (click)="changeOrderFilter('Personal')">
+    <div class="info-box" [class.active]="currentFilter === 'Shipped'">
+      <span class="info-box-icon bg-pdiBlue" (click)="changeOrderFilter('Shipped')">
         <i class="icon-briefcase"></i>
       </span>
       <div class="info-box-content">
-        <span class="info-box-text">Personal Orders</span>
+        <span class="info-box-text">Shipped Orders</span>
         <p class="info-box-number">5</p>
       </div>
     </div>

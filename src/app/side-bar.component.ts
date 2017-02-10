@@ -1,8 +1,10 @@
 import {Component, OnInit, Input, trigger, state, style, transition, animate} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'pd-side-bar',
   templateUrl: 'side-bar.component.html',
+  styleUrls: ['./side-bar.component.less'],
   animations: [
     trigger('openTray', [
       state('in', style ({height: '*'})),
@@ -22,7 +24,10 @@ export class SideBarComponent implements OnInit {
     this.state == 'closed' ? this.state = 'open' : this.state = 'closed';
   }
 
-  constructor() {
+  constructor(private router: Router) {
+    router.events.subscribe(route => {
+      this.state === 'closed';
+    })
   }
 
   ngOnInit() {
